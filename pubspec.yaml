@@ -1,0 +1,55 @@
+name: rtb_driver
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.1.4
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^1.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets:
+    - assets/img_splash_logo.png
+    - assets/img_ride_the_bee.png
+    - assets/ic_eye_open.png
+    - assets/home_background.png
+    - assets/ic_menus.png
+    - assets/ic_notification.png
+    - assets/img_profile_example.png
+    - assets/img_example_profile.png
+    - assets/ic_trips.png
+    - assets/ic_speed.png
+    - assets/ic_clock.png
+    - assets/ic_track.png
+    - assets/img_notif_example.png
+    - assets/ic_three_dots.png
+    - assets/ic_close_black.png
+    - assets/ic_circle_right.png
+    - assets/ic_star.png
+    - assets/ic_graycircle_arrow.png
+    - assets/ic_yellow_home.png
+    - assets/ic_yellow_trips.png
+    - assets/ic_yellow_chat.png
+    - assets/ic_yellow_reviews.png
+    - assets/ic_back_yellow.png
+    - assets/ic_notification.png
+    - assets/img_message.png
+    - assets/ic_yellow_dropdown.png
+    - assets/ic_search_white.png
+    - assets/ic_minibus.png
+    - assets/img_ridethebee.png
+    - assets/ic_black_circle.png
+    - assets/ic_yellow_circle.png
+    - assets/ic_dots.png
+    - assets/ic_yellow_right.png
+
