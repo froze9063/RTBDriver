@@ -17,6 +17,9 @@ abstract class Routes {
   static const REVIEWS = _Paths.REVIEWS;
   static const TRIP_DETAILS = _Paths.TRIP_DETAILS;
   static const FINISH_TRIP = _Paths.FINISH_TRIP;
+  static const SEAT_CHART = _Paths.SEAT_CHART;
+  static const EN_ROUTE = _Paths.EN_ROUTE;
+  static const PIT_STOP = _Paths.PIT_STOP;
 }
 
 abstract class _Paths {
@@ -33,4 +36,7 @@ abstract class _Paths {
   static const REVIEWS = '/reviews';
   static const TRIP_DETAILS = '/trip-details';
   static const FINISH_TRIP = '/finish-trip';
+  static const SEAT_CHART = '/seat-chart';
+  static const EN_ROUTE = '/en-route';
+  static const PIT_STOP = '/pit-stop';
 }

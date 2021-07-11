@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/vecapital/rtbdriver/rtb_driver/BuildConfig.java
+ com.vecapital.rtbdriver.rtb_driver.BuildConfig

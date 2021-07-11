@@ -1,0 +1,4 @@
+#Sun Jul 11 11:02:32 WIB 2021
+base.0=/Users/laelnaldisaputra/RTBDriver/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

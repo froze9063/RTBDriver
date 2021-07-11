@@ -4,6 +4,8 @@ import 'package:rtb_driver/app/modules/chat/bindings/chat_binding.dart';
 import 'package:rtb_driver/app/modules/chat/views/chat_view.dart';
 import 'package:rtb_driver/app/modules/edit_profile/bindings/edit_profile_binding.dart';
 import 'package:rtb_driver/app/modules/edit_profile/views/edit_profile_view.dart';
+import 'package:rtb_driver/app/modules/en_route/bindings/en_route_binding.dart';
+import 'package:rtb_driver/app/modules/en_route/views/en_route_view.dart';
 import 'package:rtb_driver/app/modules/finish_trip/bindings/finish_trip_binding.dart';
 import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/home/bindings/home_binding.dart';
@@ -16,10 +18,14 @@ import 'package:rtb_driver/app/modules/messages/bindings/messages_binding.dart';
 import 'package:rtb_driver/app/modules/messages/views/messages_view.dart';
 import 'package:rtb_driver/app/modules/notification/bindings/notification_binding.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
+import 'package:rtb_driver/app/modules/pit_stop/bindings/pit_stop_binding.dart';
+import 'package:rtb_driver/app/modules/pit_stop/views/pit_stop_view.dart';
 import 'package:rtb_driver/app/modules/profile/bindings/profile_binding.dart';
 import 'package:rtb_driver/app/modules/profile/views/profile_view.dart';
 import 'package:rtb_driver/app/modules/reviews/bindings/reviews_binding.dart';
 import 'package:rtb_driver/app/modules/reviews/views/reviews_view.dart';
+import 'package:rtb_driver/app/modules/seat_chart/bindings/seat_chart_binding.dart';
+import 'package:rtb_driver/app/modules/seat_chart/views/seat_chart_view.dart';
 import 'package:rtb_driver/app/modules/splash_screen/bindings/splash_screen_binding.dart';
 import 'package:rtb_driver/app/modules/splash_screen/views/splash_screen_view.dart';
 import 'package:rtb_driver/app/modules/trip_details/bindings/trip_details_binding.dart';
@@ -99,6 +105,21 @@ class AppPages {
       name: _Paths.FINISH_TRIP,
       page: () => FinishTripView(),
       binding: FinishTripBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEAT_CHART,
+      page: () => SeatChartView(),
+      binding: SeatChartBinding(),
+    ),
+    GetPage(
+      name: _Paths.EN_ROUTE,
+      page: () => EnRouteView(),
+      binding: EnRouteBinding(),
+    ),
+    GetPage(
+      name: _Paths.PIT_STOP,
+      page: () => PitStopView(),
+      binding: PitStopBinding(),
     ),
   ];
 }

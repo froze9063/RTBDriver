@@ -8,6 +8,10 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.1.4
+  google_maps_flutter: ^1.2.0
+  location: 3.1.0
+  app_settings: 4.0.1+1
+
   flutter: 
     sdk: flutter
 
@@ -52,4 +56,13 @@ flutter:
     - assets/ic_yellow_circle.png
     - assets/ic_dots.png
     - assets/ic_yellow_right.png
+    - assets/ic_black_uparrow.png
+    - assets/ic_black_circle.png
+    - assets/ic_yellow_from.png
+    - assets/ic_yellow_location.png
+    - assets/ic_current_location.png
+    - assets/ic_km.png
+    - assets/ic_yellow_message.png
+    - assets/ic_yellow_arrow_right.png
+    - assets/img_thankyou.png
 

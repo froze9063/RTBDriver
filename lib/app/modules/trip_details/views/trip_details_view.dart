@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:rtb_driver/app/modules/en_route/views/en_route_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
@@ -381,7 +382,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                   child: ColoredButton(height: 45, width: double.maxFinite, title: "Begin Trip",
                       color: Color.fromRGBO(63, 61, 86, 1.0)),
                   onTap: (){
-
+                      Get.to(() => EnRouteView());
                   },
                 )),
               ],
