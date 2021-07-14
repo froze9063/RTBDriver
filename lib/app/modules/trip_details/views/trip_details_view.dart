@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:rtb_driver/app/modules/en_route/views/en_route_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
+import 'package:rtb_driver/app/modules/seat_chart/views/seat_chart_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
 
 import '../controllers/trip_details_controller.dart';
@@ -26,7 +27,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                 Row(
                   children: [
                     GestureDetector(
-                      child: Image.asset("assets/ic_menus.png"),
+                      child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
                       onTap: (){
                         Get.to(() => MenusView());
                       },
@@ -39,7 +40,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                     )),
                     Expanded(child: SizedBox(), flex: 1),
                     GestureDetector(
-                      child: Image.asset("assets/ic_notification.png"),
+                      child: Image.asset("assets/ic_notification.png", height: 24, width: 24),
                       onTap: (){
                         Get.to(() => NotificationView());
                       },
@@ -173,7 +174,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                     SizedBox(height: 8),
                                     Image.asset("assets/ic_dots.png", width: 8, height: 55),
                                     SizedBox(height: 8),
-                                    Image.asset("assets/ic_black_circle.png", width: 16, height: 16),
+                                    Image.asset("assets/ic_end_dot.png", width: 16, height: 16),
                                   ],
                                 ),
 
@@ -335,19 +336,24 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   SizedBox(height: 16),
 
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Text("View Seating", style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Color.fromRGBO(255, 205, 56, 1.0)
-                                      )),
-                                      SizedBox(width: 16),
-                                      Image.asset("assets/ic_yellow_right.png"),
-                                      SizedBox(width: 16)
-                                    ],
+                                  GestureDetector(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Text("View Seating", style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Color.fromRGBO(255, 205, 56, 1.0)
+                                        )),
+                                        SizedBox(width: 16),
+                                        Image.asset("assets/ic_yellow_right.png"),
+                                        SizedBox(width: 16)
+                                      ],
+                                    ),
+                                    onTap: (){
+                                      Get.to(() => SeatChartView());
+                                    },
                                   ),
 
                                   SizedBox(height: 16),

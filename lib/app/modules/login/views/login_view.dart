@@ -57,10 +57,10 @@ class LoginView extends GetView<LoginController> {
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: const BorderRadius.all(
-                        Radius.circular(16),
+                        Radius.circular(15),
                       ),
                     ),
-                    elevation: 3,
+                    elevation: 1,
                     child: Column(
                       children: [
                         Padding(
@@ -113,12 +113,12 @@ class LoginView extends GetView<LoginController> {
 
                                 Text("Remember me", style: TextStyle(
                                     fontSize: 14,
-                                    color: Color.fromRGBO(220, 220, 220, 1.0),
+                                    color: Color.fromRGBO(135, 141, 156, 1.0),
                                     fontWeight: FontWeight.w500)),
 
                                 Expanded(child: SizedBox(), flex: 1),
 
-                                Text("Forgot Password ?", style: TextStyle(
+                                Text("Forgot Password?", style: TextStyle(
                                    fontSize: 14,
                                     color: Color.fromRGBO(255, 205, 56, 1.0),
                                     fontWeight: FontWeight.w500))

@@ -16,7 +16,7 @@ class MenusView extends GetView<MenusController> {
         children: [
           Container(
             width: double.maxFinite,
-            height: 300,
+            height: 350,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),
               bottomRight: Radius.circular(25))
@@ -24,7 +24,7 @@ class MenusView extends GetView<MenusController> {
             child: ClipRRect(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),
                   bottomRight: Radius.circular(25)),
-              child: Image.asset("assets/home_background.png",
+              child: Image.asset("assets/img_menu_background.png",
                   width: double.maxFinite,
                   height: double.maxFinite, fit: BoxFit.fill),
             ),
@@ -54,13 +54,13 @@ class MenusView extends GetView<MenusController> {
 
                   SizedBox(height: 16),
 
-                  Image.asset("assets/img_example_profile.png", height: 75, width: 75),
+                  Image.asset("assets/img_driver_home.png", height: 75, width: 75),
 
                   SizedBox(height: 24),
 
                   Row(
                     children: [
-                      Expanded(child: Text("JOHN TRAVIS SCOTT TRAVOLTA", style: TextStyle(
+                      Expanded(child: Text("John Travis Scott Travolta", style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(63, 61, 86, 1.0)
@@ -137,7 +137,7 @@ class MenusView extends GetView<MenusController> {
                           GestureDetector(
                             child: Column(
                               children: [
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
                                 Row(
                                   children: [
                                     Image.asset("assets/ic_yellow_trips.png", height: 24, width: 24),
@@ -151,7 +151,7 @@ class MenusView extends GetView<MenusController> {
                                   ],
                                 ),
 
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
 
                                 Container(
                                   width: double.maxFinite,
@@ -169,7 +169,7 @@ class MenusView extends GetView<MenusController> {
                           GestureDetector(
                             child: Column(
                               children: [
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
                                 Row(
                                   children: [
                                     Image.asset("assets/ic_yellow_chat.png", height: 24, width: 24),
@@ -183,7 +183,7 @@ class MenusView extends GetView<MenusController> {
                                   ],
                                 ),
 
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
 
                                 Container(
                                   width: double.maxFinite,
@@ -200,7 +200,7 @@ class MenusView extends GetView<MenusController> {
                           GestureDetector(
                             child: Column(
                               children: [
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
                                 Row(
                                   children: [
                                     Image.asset("assets/ic_yellow_reviews.png", height: 24, width: 24),
@@ -214,7 +214,7 @@ class MenusView extends GetView<MenusController> {
                                   ],
                                 ),
 
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
                               ],
                             ),
                             onTap: (){

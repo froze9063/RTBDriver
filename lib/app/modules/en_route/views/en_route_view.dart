@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
 import 'package:rtb_driver/app/modules/pit_stop/views/pit_stop_view.dart';
@@ -61,7 +62,7 @@ class EnRouteView extends GetView<EnRouteController> {
                   child: Row(
                     children: [
                       GestureDetector(
-                        child: Image.asset("assets/ic_menus.png"),
+                        child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
                         onTap: (){
                           Get.to(() => MenusView());
                         },
@@ -74,7 +75,7 @@ class EnRouteView extends GetView<EnRouteController> {
                       )),
                       Expanded(child: SizedBox(), flex: 1),
                       GestureDetector(
-                        child: Image.asset("assets/ic_notification.png"),
+                        child: Image.asset("assets/ic_notification.png", height: 24, width: 24),
                         onTap: (){
                           Get.to(() => NotificationView());
                         },
@@ -168,11 +169,16 @@ class EnRouteView extends GetView<EnRouteController> {
                           Row(
                             children: [
                               SizedBox(width: 16),
-                              Text("2 Hour 20 Min", style: TextStyle(
-                                  color: Color.fromRGBO(255, 205, 56, 1.0),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700
-                              )),
+                              Expanded(child: GetBuilder<EnRouteController>(
+                                  id: "end_route",
+                                  init: EnRouteController(),
+                                  builder: (value) => Text(value.isEnroute ? "2 Hour 20 Min" : "You have reached your destination",
+                                      style: TextStyle(
+                                      color: Color.fromRGBO(255, 205, 56, 1.0),
+                                      fontSize: 16,
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w700
+                                  ))), flex: 1),
                             ],
                           )
                         ],
@@ -243,78 +249,166 @@ class EnRouteView extends GetView<EnRouteController> {
 
                     SizedBox(height: 45),
 
-                    Container(
-                      padding: EdgeInsets.all(24),
-                      width: double.maxFinite,
-                      height: 115,
-                      decoration: BoxDecoration(
-                          color: Color.fromRGBO(255, 205, 56, 1.0),
-                          borderRadius: BorderRadius.only(topLeft: Radius.circular(25),
-                              topRight: Radius.circular(25))
-                      ),
-                      child: Center(
-                        child: Row(
-                          children: [
-                            SizedBox(width: 24),
+                    GetBuilder<EnRouteController>(
+                      id: "end_route",
+                      init: EnRouteController(),
+                      builder: (value) => Stack(
+                      children: [
+                        Visibility(child: GestureDetector(
+                          child: Container(
+                            padding: EdgeInsets.all(24),
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(255, 205, 56, 1.0),
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(25),
+                                    topRight: Radius.circular(25))
+                            ),
+                            child: Center(
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 24),
 
-                            Expanded(child: Column(
-                              children: [
-                                Text("12:32", style: TextStyle(
-                                    color: Color.fromRGBO(50, 50, 51, 1.0),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20
-                                )),
+                                  Expanded(child: Column(
+                                    children: [
+                                      Text("12:32", style: TextStyle(
+                                          color: Color.fromRGBO(50, 50, 51, 1.0),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20
+                                      )),
 
-                                SizedBox(height: 6),
+                                      SizedBox(height: 6),
 
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text("2 Hours", style: TextStyle(
-                                        color: Color.fromRGBO(50, 50, 51, 1.0),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20
-                                    )),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Text("2 Hours", style: TextStyle(
+                                              color: Color.fromRGBO(50, 50, 51, 1.0),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 20
+                                          )),
 
-                                    SizedBox(width: 16),
+                                          SizedBox(width: 16),
 
-                                    Image.asset("assets/ic_black_circle.png"),
+                                          Image.asset("assets/ic_black_circle.png"),
 
-                                    SizedBox(width: 16),
+                                          SizedBox(width: 16),
 
-                                    Text("120.6 km", style: TextStyle(
-                                        color: Color.fromRGBO(50, 50, 51, 1.0),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 20
-                                    ))
-                                  ],
-                                )
-                              ],
-                            ), flex: 1),
+                                          Text("120.6 km", style: TextStyle(
+                                              color: Color.fromRGBO(50, 50, 51, 1.0),
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 20
+                                          ))
+                                        ],
+                                      )
+                                    ],
+                                  ), flex: 1),
 
-                            GestureDetector(
-                              child: Container(
-                                width: 55,
-                                height: 55,
-                                child: Image.asset("assets/ic_black_uparrow.png", height: 16, width: 16),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(Radius.circular(16))
-                                ),
+                                  GestureDetector(
+                                    child: Container(
+                                      width: 55,
+                                      height: 55,
+                                      child: Image.asset("assets/ic_black_uparrow.png", height: 16, width: 16),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.all(Radius.circular(16))
+                                      ),
+                                    ),
+                                    onTap: (){
+                                      _enRouteController.setMenuShowed(true);
+                                    },
+                                  )
+                                ],
                               ),
-                              onTap: (){
-                                Get.to(() => PitStopView());
-                              },
-                            )
-                          ],
-                        ),
-                      ),
-                    )
+                            ),
+                          ),
+                          onTap: (){
+                            Get.to(() => PitStopView())?.then((value_route) {
+                              value.setEnRoute(false);
+                            });
+                          },
+                        ), visible: value.isEnroute),
+
+                        Visibility(child: GestureDetector(
+                          child:  Container(
+                            width: double.maxFinite,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                color: Color.fromRGBO(255, 205, 56, 1.0)
+                            ),
+                            child: Center(
+                              child: Text("End Trip", style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700
+                              )),
+                            ),
+                          ),
+                          onTap: (){
+                            Get.to(() => FinishTripView());
+                          },
+                        ), visible: !value.isEnroute)
+                      ],
+                    ))
                   ],
                 ),
               ),
             )),
+
+            GetBuilder<EnRouteController>(
+                id: "menu_show",
+                init: EnRouteController(),
+                builder: (value) => Visibility(child: Column(
+                  children: [
+                    Expanded(child: SizedBox(),flex: 1),
+                    Row(
+                      children: [
+                        Expanded(child: SizedBox(),flex: 1),
+                        Container(
+                          width: 50,
+                          height: 175,
+                          child: Card(
+                            elevation: 2,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(10))
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(8),
+                              child: Column(
+                                children: [
+                                  GestureDetector(
+                                    child: Image.asset("assets/ic_black_dropdown.png", width: 16, height: 16),
+                                    onTap: (){
+                                      _enRouteController.setMenuShowed(false);
+                                    },
+                                  ),
+                                  SizedBox(height: 24),
+                                  GestureDetector(
+                                    child: Image.asset("assets/img_alert.png", width: 36, height: 36),
+                                    onTap: (){
+                                      _enRouteController.setEmergency(true);
+                                      print("cuyy");
+                                    },
+                                  ),
+                                  SizedBox(height: 16),
+                                  Container(
+                                    width: double.maxFinite,
+                                    height: 1,
+                                    color: Color.fromRGBO(235, 235, 235, 1.0),
+                                  ),
+                                  SizedBox(height: 16),
+                                  Image.asset("assets/img_share.png", width: 36, height: 36),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 24)
+                      ],
+                    ),
+                    SizedBox(height: 16)
+                  ],
+                ), visible: value.isMenuShowed)),
 
             GetBuilder<EnRouteController>(
               id: "confirm",
@@ -371,7 +465,88 @@ class EnRouteView extends GetView<EnRouteController> {
                     ),
                   ),
                 ),
-              ), visible: value.isConfirmShowed))
+              ), visible: value.isConfirmShowed)),
+
+            GetBuilder<EnRouteController>(
+                id: "emergency_call",
+                init: EnRouteController(),
+                builder: (value) => Visibility(child: Container(
+                  height: double.maxFinite,
+                  width: double.maxFinite,
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Center(
+                      child: Container(
+                        margin: EdgeInsets.only(left: 24, right: 24),
+                        width: double.maxFinite,
+                        height: 390,
+                        child: Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          elevation: 1.5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(24),
+                            child: Column(
+                              children: [
+                                SizedBox(height: 16),
+                                Row(
+                                  children: [
+                                    Expanded(child: Text("For Emergency Calls Only",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold
+                                        )), flex: 1),
+                                    GestureDetector(
+                                      child: Image.asset("assets/ic_close_black.png", height: 24, width: 24),
+                                      onTap: (){
+                                        value.setEmergency(false);
+                                      },
+                                    )
+                                  ],
+                                ),
+
+                                SizedBox(height: 16),
+
+                                Image.asset("assets/img_emergency.png", height: 100,width: 100),
+
+                                Padding(padding: EdgeInsets.only(top: 16,left: 24, right: 24, bottom: 16), child: GestureDetector(
+                                  child: ColoredButton(height: 45, width: double.maxFinite, title: "Confirm",
+                                      color: Color.fromRGBO(255, 205, 56, 1.0)),
+                                  onTap: (){
+
+                                  },
+                                )),
+
+                                GestureDetector(
+                                  child: Text("or", style: TextStyle(
+                                      fontSize: 16,
+                                      color: Color.fromRGBO(135, 141, 156, 1.0),
+                                      fontWeight: FontWeight.w500
+                                  )),
+                                  onTap: (){
+
+                                  },
+                                ),
+
+                                Padding(padding: EdgeInsets.only(top: 16,left: 24, right: 24, bottom: 16), child: GestureDetector(
+                                  child: ColoredButton(height: 45, width: double.maxFinite, title: "Call Operator",
+                                      color: Color.fromRGBO(135, 141, 156, 1.0)),
+                                  onTap: (){
+
+                                  },
+                                )),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ), visible: value.isEmergencyShowed)),
           ],
         ),
       ),

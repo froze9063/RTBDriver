@@ -58,6 +58,12 @@ class NotificationView extends GetView<NotificationController> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text("Bus Arrived", style: TextStyle(
+                                      color: Color.fromRGBO(58, 58, 58, 1.0),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold
+                                  )),
+                                  SizedBox(height: 4),
                                   Text("Your bus  SAB 4124, is ready for Departure, in 10 minutes.", style: TextStyle(
                                       height: 1.5
                                   )),
@@ -68,7 +74,6 @@ class NotificationView extends GetView<NotificationController> {
                                   )),
                                 ],
                               ),flex: 1),
-                              Image.asset("assets/ic_three_dots.png",height: 6,width: 20)
                             ],
                           ),
                         ),

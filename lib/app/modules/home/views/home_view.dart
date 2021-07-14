@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
+import 'package:rtb_driver/app/modules/profile/views/profile_view.dart';
 import 'package:rtb_driver/app/modules/trip_details/views/trip_details_view.dart';
+import 'package:rtb_driver/app/modules/trips/views/trips_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
 
 import '../controllers/home_controller.dart';
@@ -25,7 +27,7 @@ class HomeView extends GetView<HomeController> {
                   Row(
                     children: [
                       GestureDetector(
-                        child: Image.asset("assets/ic_menus.png"),
+                        child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
                         onTap: (){
                           Get.to(() => MenusView());
                         },
@@ -38,7 +40,7 @@ class HomeView extends GetView<HomeController> {
                       )),
                       Expanded(child: SizedBox(), flex: 1),
                       GestureDetector(
-                        child: Image.asset("assets/ic_notification.png"),
+                        child: Image.asset("assets/ic_notification.png", height: 24, width: 24),
                         onTap: (){
                           Get.to(() => NotificationView());
                         },
@@ -46,9 +48,9 @@ class HomeView extends GetView<HomeController> {
                     ],
                   ),
                   SizedBox(height: 16),
-                  Image.asset("assets/img_example_profile.png", height: 100, width: 100),
+                  Image.asset("assets/img_driver_home.png", height: 100, width: 100, fit: BoxFit.fitHeight),
                   SizedBox(height: 16),
-                  Text("JOHN TRAVIS SCOTT TRAVOLTA", style: TextStyle(
+                  Text("John Travis Scott Travolta", style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(63, 61, 86, 1.0)
@@ -90,7 +92,7 @@ class HomeView extends GetView<HomeController> {
                           SizedBox(height: 8),
                           Text("Total Trips", style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(63, 61, 86, 1.0)
                           )),
                         ],
@@ -110,7 +112,7 @@ class HomeView extends GetView<HomeController> {
                           SizedBox(height: 8),
                           Text("Total Distance", style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(63, 61, 86, 1.0)
                           )),
                         ],
@@ -130,7 +132,7 @@ class HomeView extends GetView<HomeController> {
                           SizedBox(height: 8),
                           Text("Total Hours", style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(63, 61, 86, 1.0)
                           )),
                         ],
@@ -138,19 +140,24 @@ class HomeView extends GetView<HomeController> {
                     ],
                   ),
 
-                  Container(
-                    margin: EdgeInsets.only(top: 24),
-                    padding: EdgeInsets.only(left: 36, right: 36, top: 10, bottom: 10),
-                    child: Text("View Profile", style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(255, 205, 56, 1.0)
-                    )),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(8))
+                  GestureDetector(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 24),
+                      padding: EdgeInsets.only(left: 36, right: 36, top: 10, bottom: 10),
+                      child: Text("View Profile", style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(255, 205, 56, 1.0)
+                      )),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(8))
+                      ),
                     ),
-                  )
+                    onTap: (){
+                      Get.to(() => ProfileView());
+                    },
+                  ),
                 ],
               ),
           ),
@@ -159,7 +166,7 @@ class HomeView extends GetView<HomeController> {
             child: Container(
               padding: EdgeInsets.all(24),
               width: double.maxFinite,
-              height: MediaQuery. of(context). size. height / 2,
+              height: MediaQuery. of(context). size. height / 2.1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(25),
@@ -335,7 +342,7 @@ class HomeView extends GetView<HomeController> {
                     child: ColoredButton(height: 45, width: double.maxFinite, title: "View All Trips",
                         color: Color.fromRGBO(255, 205, 56, 1.0)),
                     onTap: (){
-                      Get.to(() => HomeView());
+                      Get.to(() => TripsView());
                     },
                   )),
                 ],

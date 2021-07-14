@@ -43,7 +43,7 @@ class ReviewsView extends GetView<ReviewsController> {
               children: [
                 Expanded(child: ListView.builder(itemBuilder: (context, index){
                   return Container(
-                    margin: EdgeInsets.only(top: 16),
+                    margin: EdgeInsets.only(top: index == 0 ? 24 : 16),
                     width: double.maxFinite,
                     child: Column(
                       children: [
@@ -80,7 +80,7 @@ class ReviewsView extends GetView<ReviewsController> {
                               SizedBox(height: 2),
 
                               Text("16-07-2021", style: TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                   color: Color.fromRGBO(63, 61, 86, 1.0)
                               )),
@@ -93,7 +93,7 @@ class ReviewsView extends GetView<ReviewsController> {
                                       "Thank you for the smooth journey! Will def use ride the bee again on my next trip.",
                                       style: TextStyle(
                                       height: 1.5,
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.normal,
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )), flex: 1),

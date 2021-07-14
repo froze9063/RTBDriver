@@ -59,7 +59,7 @@ class PitStopView extends GetView<PitStopController> {
                 child: Row(
                   children: [
                     GestureDetector(
-                      child: Image.asset("assets/ic_menus.png"),
+                      child: Image.asset("assets/ic_menus.png", width: 24, height: 24),
                       onTap: (){
                         Get.to(() => MenusView());
                       },
@@ -72,7 +72,7 @@ class PitStopView extends GetView<PitStopController> {
                     )),
                     Expanded(child: SizedBox(), flex: 1),
                     GestureDetector(
-                      child: Image.asset("assets/ic_notification.png"),
+                      child: Image.asset("assets/ic_notification.png", width: 24, height: 24),
                       onTap: (){
                         Get.to(() => NotificationView());
                       },
@@ -347,7 +347,8 @@ class PitStopView extends GetView<PitStopController> {
                      ),
                    ),
                    onTap: (){
-                     Get.to(() => FinishTripView());
+                     //Get.to(() => FinishTripView());
+                     Get.back();
                    },
                  )
                 ],

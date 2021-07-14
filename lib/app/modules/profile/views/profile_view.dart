@@ -312,7 +312,8 @@ class ProfileView extends GetView<ProfileController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset("assets/img_example_profile.png", height: 100, width: 100),
+                  Image.asset("assets/img_driver_home.png", height: 100,
+                      width: 100, fit: BoxFit.fitHeight),
                 ],
               ),
             ),

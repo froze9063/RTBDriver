@@ -33,7 +33,10 @@ class CustomEditText extends StatelessWidget {
                 Expanded(child: TextField(
                     controller: textEditingController,
                     decoration: new InputDecoration.collapsed(
-                        hintText: placeholder
+                        hintText: placeholder,
+                        hintStyle: TextStyle(
+                          color: Color.fromRGBO(135, 141, 156, 1.0)
+                        )
                     )
                 ), flex: 1),
 

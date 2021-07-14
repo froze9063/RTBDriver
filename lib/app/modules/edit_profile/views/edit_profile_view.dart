@@ -310,7 +310,7 @@ class EditProfileView extends GetView<EditProfileController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset("assets/img_example_profile.png", height: 100, width: 100),
+                  Image.asset("assets/img_home_edit.png", height: 100, width: 100, fit: BoxFit.fitHeight),
                 ],
               ),
             ),

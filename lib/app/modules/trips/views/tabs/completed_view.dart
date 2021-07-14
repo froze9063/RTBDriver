@@ -79,27 +79,39 @@ class CompletedView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            width: 100,
-                            padding: EdgeInsets.only(top: 4, bottom: 4),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset("assets/ic_minibus.png", width: 10, height: 10, fit: BoxFit.cover),
-                                SizedBox(width: 4),
-                                Text("SAB 4124",
-                                    style: TextStyle(
-                                        color: Color.fromRGBO(35, 35, 35, 1.0),
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w700
-                                    ))
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(255, 205, 56, 1.0),
-                                borderRadius: BorderRadius.all(Radius.circular(25))
-                            ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 100,
+                                padding: EdgeInsets.only(top: 4, bottom: 4),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Image.asset("assets/ic_minibus.png", width: 10, height: 10, fit: BoxFit.cover),
+                                    SizedBox(width: 4),
+                                    Text("SAB 4124",
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(35, 35, 35, 1.0),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700
+                                        ))
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromRGBO(255, 205, 56, 1.0),
+                                    borderRadius: BorderRadius.all(Radius.circular(25))
+                                ),
+                              ),
+
+                              SizedBox(width: 16),
+
+                              Text("Fri, 14 Sep 2021", style: TextStyle(
+                                  color: Color.fromRGBO(58, 58, 58, 1.0),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
+                              ))
+                            ],
                           ),
                           SizedBox(height: 8),
                           Row(

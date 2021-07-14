@@ -46,7 +46,7 @@ class TripsView extends GetView<TripsController> {
 
                     TabBar(
                       controller: _tripsController.tabController,
-                      unselectedLabelColor: Color.fromRGBO(124, 108, 108, 1.0),
+                      unselectedLabelColor: Color.fromRGBO(63, 61, 86, 1.0),
                       unselectedLabelStyle: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold

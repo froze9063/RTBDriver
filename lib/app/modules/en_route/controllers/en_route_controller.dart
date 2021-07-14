@@ -16,7 +16,11 @@ class EnRouteController extends GetxController {
   late Completer<GoogleMapController> gmapController;
   late GoogleMapController googleMapController;
   late LocationData locationDataUser;
+
   bool isConfirmShowed = true;
+  bool isMenuShowed = false;
+  bool isEmergencyShowed = false;
+  bool isEnroute = true;
 
   @override
   void onInit() {
@@ -37,6 +41,21 @@ class EnRouteController extends GetxController {
   void setConfirm(bool confirm){
     this.isConfirmShowed = confirm;
     update(["confirm"]);
+  }
+
+  void setMenuShowed(bool isMenuShowed){
+    this.isMenuShowed = isMenuShowed;
+    update(["menu_show"]);
+  }
+
+  void setEmergency(bool emergency){
+    this.isEmergencyShowed = emergency;
+    update(["emergency_call"]);
+  }
+
+  void setEnRoute(bool isEnroute){
+    this.isEnroute = isEnroute;
+    update(["end_route"]);
   }
 
   void checkCurrentLocation(BuildContext context) async {

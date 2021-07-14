@@ -65,4 +65,17 @@ flutter:
     - assets/ic_yellow_message.png
     - assets/ic_yellow_arrow_right.png
     - assets/img_thankyou.png
+    - assets/img_available_seat.png
+    - assets/img_booked_seat.png
+    - assets/img_selected_seat.png
+    - assets/ic_new_back_yellow.png
+    - assets/img_seat_background.png
+    - assets/img_driver_home.png
+    - assets/ic_end_dot.png
+    - assets/img_menu_background.png
+    - assets/ic_black_dropdown.png
+    - assets/img_alert.png
+    - assets/img_share.png
+    - assets/img_emergency.png
+    - assets/img_home_edit.png
 
