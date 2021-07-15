@@ -35,9 +35,16 @@ class CustomEditText extends StatelessWidget {
                     decoration: new InputDecoration.collapsed(
                         hintText: placeholder,
                         hintStyle: TextStyle(
-                          color: Color.fromRGBO(135, 141, 156, 1.0)
+                          color: Color.fromRGBO(135, 141, 156, 1.0),
+                          fontFamily: "PoppinsRegular",
+                          fontSize: 15
                         )
-                    )
+                    ),
+                    style: TextStyle(
+                      fontFamily: "PoppinsMedium",
+                      fontSize: 15,
+                      color: Color.fromRGBO(63, 61, 86, 1.0),
+                    ),
                 ), flex: 1),
 
                 Visibility(child: Image.asset("assets/ic_eye_open.png",

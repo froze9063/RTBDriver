@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rtb_driver/app/modules/chat/views/chat_view.dart';
 import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
@@ -67,7 +68,7 @@ class PitStopView extends GetView<PitStopController> {
                     Expanded(child: SizedBox(), flex: 1),
                     Text("Pit Stop", style: TextStyle(
                         fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: "PoppinsBold",
                         color: Color.fromRGBO(63, 61, 86, 1.0)
                     )),
                     Expanded(child: SizedBox(), flex: 1),
@@ -82,106 +83,6 @@ class PitStopView extends GetView<PitStopController> {
               ),
             ),
           ),
-
-          Visibility(child: Container(
-            margin: EdgeInsets.only(top: 115, left: 24, right: 24),
-            width: double.maxFinite,
-            height: 155,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(24))
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Image.asset("assets/ic_yellow_from.png", width: 24, height: 24),
-                        SizedBox(height: 8),
-                        Image.asset("assets/ic_dots.png", width: 8, height: 25),
-                        SizedBox(height: 8),
-                        Image.asset("assets/ic_yellow_location.png", width: 24, height: 24),
-                      ],
-                    ),
-
-                    SizedBox(width: 16),
-
-                    Expanded(child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("From", style: TextStyle(
-                            color: Color.fromRGBO(135, 141, 156, 1.0),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700
-                        )),
-                        SizedBox(height: 8),
-                        Text("Kuala Lumpur", style: TextStyle(
-                            color: Color.fromRGBO(63, 61, 86, 1.0),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700
-                        )),
-                        SizedBox(height: 24),
-                        Text("To", style: TextStyle(
-                            color: Color.fromRGBO(135, 141, 156, 1.0),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700
-                        )),
-                        SizedBox(height: 8),
-                        Text("Penang", style: TextStyle(
-                            color: Color.fromRGBO(63, 61, 86, 1.0),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700
-                        )),
-                      ],
-                    ), flex: 1),
-
-                    Container(
-                      width: 1,
-                      height: double.maxFinite,
-                      color: Color.fromRGBO(234, 237, 241, 1.0),
-                    ),
-
-                    Expanded(child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            SizedBox(width: 16),
-                            Text("ETA",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                    color: Color.fromRGBO(135, 141, 156, 1.0),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500
-                                ))
-                          ],
-                        ),
-
-
-                        SizedBox(height: 8),
-
-                        Row(
-                          children: [
-                            SizedBox(width: 16),
-                            Text("2 Hour 20 Min", style: TextStyle(
-                                color: Color.fromRGBO(255, 205, 56, 1.0),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700
-                            )),
-                          ],
-                        )
-                      ],
-                    ), flex: 1),
-
-                    SizedBox(width: 16),
-                  ],
-                ),
-              ),
-            ),
-          ), visible: true),
 
           Positioned.fill(child: Align(
             child: Align(
@@ -225,14 +126,25 @@ class PitStopView extends GetView<PitStopController> {
 
                       Expanded(child: SizedBox(),flex: 1),
 
-                      Container(
-                        width: 55,
-                        height: 55,
-                        child: Image.asset("assets/ic_yellow_message.png", height: 16, width: 16),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(16))
+                      GestureDetector(
+                        child: Card(
+                          elevation: 2,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(16))
+                          ),
+                          child: Container(
+                            width: 55,
+                            height: 55,
+                            child: Image.asset("assets/ic_yellow_message.png", height: 16, width: 16),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(Radius.circular(16))
+                            ),
+                          ),
                         ),
+                        onTap: (){
+                          Get.to(() => ChatView());
+                        },
                       ),
 
                       SizedBox(width: 24),
@@ -240,32 +152,30 @@ class PitStopView extends GetView<PitStopController> {
                   ),
 
                   Container(
-                    margin: EdgeInsets.only(top: 24, left: 24, right: 24),
+                    margin: EdgeInsets.only(top: 6, left: 24, right: 24),
                     width: double.maxFinite,
-                    height: 230,
                     child: Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(24))
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(16),
+                        padding: EdgeInsets.all(24),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                               Text("Pit Stop", style: TextStyle(
                                 fontSize: 14,
                                 color: Color.fromRGBO(135, 141, 156, 1.0),
-                                fontWeight: FontWeight.w500
+                                fontFamily: "PoppinsRegular",
                               )),
                               SizedBox(height: 6),
                               Text("R&R Sungai Buloh Southbound", style: TextStyle(
                                   fontSize: 16,
                                   color: Color.fromRGBO(63, 61, 86, 1.0),
-                                  fontWeight: FontWeight.bold
+                                  fontFamily: "PoppinsMedium",
                               )),
                               Container(
-                                margin: EdgeInsets.only(top: 24,bottom: 24),
+                                margin: EdgeInsets.only(top: 16,bottom: 16),
                                 height: 1,
                                 width: double.maxFinite,
                                 color: Color.fromRGBO(234, 237, 241, 1.0),
@@ -279,7 +189,7 @@ class PitStopView extends GetView<PitStopController> {
                                    Text("Duration", style: TextStyle(
                                        fontSize: 16,
                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                       fontWeight: FontWeight.w500
+                                       fontFamily: "PoppinsRegular",
                                    )),
                                    SizedBox(height: 6),
                                    Container(
@@ -292,7 +202,7 @@ class PitStopView extends GetView<PitStopController> {
                                              Expanded(child:  Text("15 minutes", style: TextStyle(
                                                  fontSize: 16,
                                                  color: Color.fromRGBO(135, 141, 156, 1.0),
-                                                 fontWeight: FontWeight.w500
+                                                 fontFamily: "PoppinsRegular",
                                              )),flex: 1),
                                              Image.asset("assets/ic_yellow_dropdown.png")
                                            ],
@@ -310,13 +220,13 @@ class PitStopView extends GetView<PitStopController> {
                                     Text("Timer", style: TextStyle(
                                         fontSize: 16,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.w500
+                                        fontFamily: "PoppinsRegular",
                                     )),
                                     SizedBox(height: 6),
                                     Text("00:00:00", style: TextStyle(
                                         fontSize: 18,
                                         color: Color.fromRGBO(255, 205, 56, 1.0),
-                                        fontWeight: FontWeight.bold
+                                        fontFamily: "PoppinsMedium",
                                     )),
                                   ],
                                 ),
@@ -332,7 +242,7 @@ class PitStopView extends GetView<PitStopController> {
                   SizedBox(height: 16),
 
                  GestureDetector(
-                   child:  Container(
+                   child: Container(
                      width: double.maxFinite,
                      height: 55,
                      decoration: BoxDecoration(
@@ -340,14 +250,14 @@ class PitStopView extends GetView<PitStopController> {
                      ),
                      child: Center(
                        child: Text("Notify Passengers", style: TextStyle(
-                           color: Colors.white,
-                           fontSize: 16,
-                           fontWeight: FontWeight.w700
+                         color: Colors.white,
+                         fontSize: 16,
+                         fontFamily: "PoppinsBold",
+                         decoration: TextDecoration.none
                        )),
                      ),
                    ),
                    onTap: (){
-                     //Get.to(() => FinishTripView());
                      Get.back();
                    },
                  )

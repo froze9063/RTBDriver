@@ -32,7 +32,7 @@ class SeatChartView extends GetView<SeatChartController> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: "PoppinsBold",
                           color: Color.fromRGBO(63, 61, 86, 1.0)
                       ))),
                   SizedBox(width: 24),
@@ -51,7 +51,7 @@ class SeatChartView extends GetView<SeatChartController> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.normal,
+                              fontFamily: "PoppinsRegular",
                               color: Color.fromRGBO(63, 61, 86, 1.0)
                           ))
                     ],
@@ -67,7 +67,7 @@ class SeatChartView extends GetView<SeatChartController> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.normal,
+                              fontFamily: "PoppinsRegular",
                               color: Color.fromRGBO(63, 61, 86, 1.0)
                           ))
                     ],
@@ -94,11 +94,18 @@ class SeatChartView extends GetView<SeatChartController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Visibility(child: Text("A1"), visible: index % 2 == 0),
+                              Visibility(child: Text("A1",
+                              style: TextStyle(
+                                fontFamily: "PoppinsRegular"
+                              ),
+                              ), visible: index % 2 == 0),
                               SizedBox(width: 4),
                               Image.asset(_seatChartController.seatsList[index], width: 36, height: 36),
                               SizedBox(width: 4),
-                              Visibility(child: Text("A2"), visible: index % 2 != 0),
+                              Visibility(child: Text("A2",
+                                  style: TextStyle(
+                                      fontFamily: "PoppinsRegular"
+                                  )), visible: index % 2 != 0),
                             ],
                           ),
                         );

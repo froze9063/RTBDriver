@@ -19,8 +19,9 @@ class ReviewsView extends GetView<ReviewsController> {
               child: Row(children: [
                 Expanded(child: Text("Reviews", style: TextStyle(
                   fontSize: 20,
+                  fontFamily: ("PoppinsMedium"),
                   color: Color.fromRGBO(63, 61, 86, 1.0),
-                  fontWeight: FontWeight.w500
+
                 )), flex: 1),
                 GestureDetector(
                   child: Image.asset("assets/ic_close_black.png", width: 24, height: 24),
@@ -57,7 +58,7 @@ class ReviewsView extends GetView<ReviewsController> {
                                   Expanded(child: Text("Elizabeth Tan",
                                     style: TextStyle(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.bold,
+                                        fontFamily: ("PoppinsBold"),
                                       color: Color.fromRGBO(255, 205 ,56, 1.0)
                                     ),
                                   )),
@@ -69,7 +70,7 @@ class ReviewsView extends GetView<ReviewsController> {
 
                                       Text("4.8", style: TextStyle(
                                           fontSize: 12,
-                                          fontWeight: FontWeight.w700,
+                                          fontFamily: ("PoppinsMedium"),
                                           color: Color.fromRGBO(63, 61, 86, 1.0)
                                       ))
                                     ],
@@ -81,8 +82,8 @@ class ReviewsView extends GetView<ReviewsController> {
 
                               Text("16-07-2021", style: TextStyle(
                                   fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                  color: Color.fromRGBO(63, 61, 86, 1.0)
+                                  fontFamily: ("PoppinsRegular"),
+                                  color: Color.fromRGBO(135, 141, 156, 1.0)
                               )),
 
                               SizedBox(height: 8),
@@ -94,7 +95,7 @@ class ReviewsView extends GetView<ReviewsController> {
                                       style: TextStyle(
                                       height: 1.5,
                                       fontSize: 16,
-                                      fontWeight: FontWeight.normal,
+                                      fontFamily: ("PoppinsRegular"),
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )), flex: 1),
                                   SizedBox(width: 24),

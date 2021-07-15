@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:maps_launcher/maps_launcher.dart';
 import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
@@ -70,7 +71,7 @@ class EnRouteView extends GetView<EnRouteController> {
                       Expanded(child: SizedBox(), flex: 1),
                       Text("En Route", style: TextStyle(
                           fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: "PoppinsBold",
                           color: Color.fromRGBO(63, 61, 86, 1.0)
                       )),
                       Expanded(child: SizedBox(), flex: 1),
@@ -89,7 +90,7 @@ class EnRouteView extends GetView<EnRouteController> {
             Container(
               margin: EdgeInsets.only(top: 115, left: 24, right: 24),
               width: double.maxFinite,
-              height: 155,
+              height: 150,
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(24))
@@ -117,25 +118,24 @@ class EnRouteView extends GetView<EnRouteController> {
                           Text("From", style: TextStyle(
                               color: Color.fromRGBO(135, 141, 156, 1.0),
                               fontSize: 12,
-                              fontWeight: FontWeight.w700
+                              fontFamily: "PoppinsRegular",
                           )),
-                          SizedBox(height: 8),
+
                           Text("Kuala Lumpur", style: TextStyle(
                               color: Color.fromRGBO(63, 61, 86, 1.0),
                               fontSize: 14,
-                              fontWeight: FontWeight.w700
+                              fontFamily: "PoppinsMedium",
                           )),
                           SizedBox(height: 24),
                           Text("To", style: TextStyle(
                               color: Color.fromRGBO(135, 141, 156, 1.0),
                               fontSize: 12,
-                              fontWeight: FontWeight.w700
+                              fontFamily: "PoppinsRegular",
                           )),
-                          SizedBox(height: 8),
                           Text("Penang", style: TextStyle(
                               color: Color.fromRGBO(63, 61, 86, 1.0),
                               fontSize: 14,
-                              fontWeight: FontWeight.w700
+                              fontFamily: "PoppinsMedium",
                           )),
                         ],
                       ), flex: 1),
@@ -158,7 +158,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                  style: TextStyle(
                                      color: Color.fromRGBO(135, 141, 156, 1.0),
                                      fontSize: 14,
-                                     fontWeight: FontWeight.w500
+                                     fontFamily: "PoppinsRegular",
                                  ))
                            ],
                          ),
@@ -175,9 +175,9 @@ class EnRouteView extends GetView<EnRouteController> {
                                   builder: (value) => Text(value.isEnroute ? "2 Hour 20 Min" : "You have reached your destination",
                                       style: TextStyle(
                                       color: Color.fromRGBO(255, 205, 56, 1.0),
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       height: 1.5,
-                                      fontWeight: FontWeight.w700
+                                      fontFamily: "PoppinsMedium",
                                   ))), flex: 1),
                             ],
                           )
@@ -206,7 +206,7 @@ class EnRouteView extends GetView<EnRouteController> {
                           height: 55,
                           child: Stack(
                             children: [
-                              Image.asset("assets/ic_km.png", height: 100, width: 100),
+                              Image.asset("assets/ic_km.png", height: 120, width: 120),
                              Container(
                                width: double.maxFinite,
                                height: double.maxFinite,
@@ -216,12 +216,12 @@ class EnRouteView extends GetView<EnRouteController> {
                                  children: [
                                    Text("80", style: TextStyle(
                                        color: Colors.white,
-                                       fontWeight: FontWeight.bold,
+                                       fontFamily: "PoppinsBold",
                                        fontSize: 16
                                    )),
                                    Text("km/h", style: TextStyle(
                                        color: Color.fromRGBO(195, 194, 204, 1.0),
-                                       fontWeight: FontWeight.normal,
+                                       fontFamily: "PoppinsRegular",
                                        fontSize: 12
                                    )),
                                  ],
@@ -247,7 +247,7 @@ class EnRouteView extends GetView<EnRouteController> {
                       ],
                     ),
 
-                    SizedBox(height: 45),
+                    SizedBox(height: 24),
 
                     GetBuilder<EnRouteController>(
                       id: "end_route",
@@ -256,7 +256,7 @@ class EnRouteView extends GetView<EnRouteController> {
                       children: [
                         Visibility(child: GestureDetector(
                           child: Container(
-                            padding: EdgeInsets.all(24),
+                            padding: EdgeInsets.only(left: 24, right: 24, top: 16, bottom: 16),
                             width: double.maxFinite,
                             decoration: BoxDecoration(
                                 color: Color.fromRGBO(255, 205, 56, 1.0),
@@ -272,7 +272,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                     children: [
                                       Text("12:32", style: TextStyle(
                                           color: Color.fromRGBO(50, 50, 51, 1.0),
-                                          fontWeight: FontWeight.bold,
+                                          fontFamily: "PoppinsBold",
                                           fontSize: 20
                                       )),
 
@@ -284,7 +284,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                         children: [
                                           Text("2 Hours", style: TextStyle(
                                               color: Color.fromRGBO(50, 50, 51, 1.0),
-                                              fontWeight: FontWeight.w500,
+                                              fontFamily: "PoppinsMedium",
                                               fontSize: 20
                                           )),
 
@@ -296,7 +296,7 @@ class EnRouteView extends GetView<EnRouteController> {
 
                                           Text("120.6 km", style: TextStyle(
                                               color: Color.fromRGBO(50, 50, 51, 1.0),
-                                              fontWeight: FontWeight.w500,
+                                              fontFamily: "PoppinsMedium",
                                               fontSize: 20
                                           ))
                                         ],
@@ -340,7 +340,7 @@ class EnRouteView extends GetView<EnRouteController> {
                               child: Text("End Trip", style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w700
+                                  fontFamily: "PoppinsBold",
                               )),
                             ),
                           ),
@@ -397,7 +397,13 @@ class EnRouteView extends GetView<EnRouteController> {
                                     color: Color.fromRGBO(235, 235, 235, 1.0),
                                   ),
                                   SizedBox(height: 16),
-                                  Image.asset("assets/img_share.png", width: 36, height: 36),
+                                  GestureDetector(
+                                    child: Image.asset("assets/img_share.png", width: 36, height: 36),
+                                    onTap: (){
+                                      MapsLauncher.launchQuery('1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA');
+                                      MapsLauncher.launchCoordinates(37.4220041, -122.0862462);
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
@@ -422,7 +428,7 @@ class EnRouteView extends GetView<EnRouteController> {
                     child: Container(
                       margin: EdgeInsets.only(left: 24, right: 24),
                       width: double.maxFinite,
-                      height: 350,
+                      height: 355,
                       child: Card(
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         elevation: 1.5,
@@ -437,7 +443,7 @@ class EnRouteView extends GetView<EnRouteController> {
                               SizedBox(height: 16),
                               Text("Are you ready to begin trip?", style: TextStyle(
                                   fontSize: 16,
-                                  color: Color.fromRGBO(63, 61, 86, 1.0)
+                                  fontFamily: "PoppinsRegular",
                               )),
 
                               Padding(padding: EdgeInsets.only(top: 24,left: 24, right: 24, bottom: 16), child: GestureDetector(
@@ -452,7 +458,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                 child: Text("Back", style: TextStyle(
                                     fontSize: 16,
                                     color: Color.fromRGBO(135, 141, 156, 1.0),
-                                    fontWeight: FontWeight.w500
+                                    fontFamily: "PoppinsMedium",
                                 )),
                                 onTap: (){
                                   Get.back();
@@ -479,7 +485,7 @@ class EnRouteView extends GetView<EnRouteController> {
                       child: Container(
                         margin: EdgeInsets.only(left: 24, right: 24),
                         width: double.maxFinite,
-                        height: 390,
+                        height: 300,
                         child: Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
                           elevation: 1.5,
@@ -490,7 +496,7 @@ class EnRouteView extends GetView<EnRouteController> {
                             padding: EdgeInsets.all(24),
                             child: Column(
                               children: [
-                                SizedBox(height: 16),
+                                SizedBox(height: 24),
                                 Row(
                                   children: [
                                     Expanded(child: Text("For Emergency Calls Only",
@@ -498,7 +504,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                         style: TextStyle(
                                             fontSize: 16,
                                             color: Colors.black,
-                                            fontWeight: FontWeight.bold
+                                            fontFamily: "PoppinsBold",
                                         )), flex: 1),
                                     GestureDetector(
                                       child: Image.asset("assets/ic_close_black.png", height: 24, width: 24),
@@ -511,28 +517,9 @@ class EnRouteView extends GetView<EnRouteController> {
 
                                 SizedBox(height: 16),
 
-                                Image.asset("assets/img_emergency.png", height: 100,width: 100),
+                                Image.asset("assets/img_emergency.png", height: 90,width: 90),
 
-                                Padding(padding: EdgeInsets.only(top: 16,left: 24, right: 24, bottom: 16), child: GestureDetector(
-                                  child: ColoredButton(height: 45, width: double.maxFinite, title: "Confirm",
-                                      color: Color.fromRGBO(255, 205, 56, 1.0)),
-                                  onTap: (){
-
-                                  },
-                                )),
-
-                                GestureDetector(
-                                  child: Text("or", style: TextStyle(
-                                      fontSize: 16,
-                                      color: Color.fromRGBO(135, 141, 156, 1.0),
-                                      fontWeight: FontWeight.w500
-                                  )),
-                                  onTap: (){
-
-                                  },
-                                ),
-
-                                Padding(padding: EdgeInsets.only(top: 16,left: 24, right: 24, bottom: 16), child: GestureDetector(
+                                Padding(padding: EdgeInsets.only(top: 24,left: 24, right: 24, bottom: 16), child: GestureDetector(
                                   child: ColoredButton(height: 45, width: double.maxFinite, title: "Call Operator",
                                       color: Color.fromRGBO(135, 141, 156, 1.0)),
                                   onTap: (){

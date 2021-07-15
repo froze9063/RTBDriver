@@ -36,7 +36,7 @@ class ProfileView extends GetView<ProfileController> {
                   Text("My Profile", style: TextStyle(
                       fontSize: 16,
                       color: Color.fromRGBO(63, 61, 86, 1.0),
-                      fontWeight: FontWeight.bold
+                      fontFamily: "PoppinsBold"
                   ), textAlign: TextAlign.center,)
                 ],
               ),
@@ -75,7 +75,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -83,7 +83,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("johntravisscott@ridethebee.com", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -106,7 +106,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -114,7 +114,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("John Travis Scott Travolta", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -137,7 +137,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -145,7 +145,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("+65 4589 0321", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -168,7 +168,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -176,7 +176,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("S2459077A", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -199,7 +199,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -207,7 +207,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("S1234567A", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -230,7 +230,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -238,7 +238,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("Ride The Bee", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),
@@ -261,7 +261,7 @@ class ProfileView extends GetView<ProfileController> {
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
+                                        fontFamily: "PoppinsRegular"
                                     )),
 
                                 SizedBox(height: 16),
@@ -269,7 +269,7 @@ class ProfileView extends GetView<ProfileController> {
                                 Text("SBA 4124", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
 
                                 SizedBox(height: 16),

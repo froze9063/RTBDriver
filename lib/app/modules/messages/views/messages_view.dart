@@ -28,7 +28,7 @@ class MessagesView extends GetView<MessagesController> {
 
                 Text("Messages", style: TextStyle(
                     color: Color.fromRGBO(63, 61, 86, 1.0), fontSize: 16,
-                    fontWeight: FontWeight.bold
+                    fontFamily: "PoppinsBold",
                 )),
 
                 Expanded(child: SizedBox(),flex: 1),
@@ -65,16 +65,18 @@ class MessagesView extends GetView<MessagesController> {
                                     Text("Maryam Teresita Gomez", style: TextStyle(
                                         color: Color.fromRGBO(58, 58, 58, 1.0),
                                         fontSize: 14,
-                                        fontWeight: FontWeight.w700
+                                        fontFamily: "PoppinsBold",
                                     )),
                                     SizedBox(height: 6),
                                     Text("Your bus  SAB 4124, is ready for Departure, in 10 minutes.", style: TextStyle(
-                                        height: 1.5
+                                        height: 1.5,
+                                        fontFamily: "PoppinsRegular",
                                     )),
                                     SizedBox(height: 4),
                                     Text("2 Hours Ago", style: TextStyle(
                                         color: Color.fromRGBO(188, 196, 204, 1.0),
-                                        fontSize: 12
+                                        fontSize: 12,
+                                        fontFamily: "PoppinsMedium",
                                     )),
                                   ],
                                 ),flex: 1),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:rtb_driver/app/modules/home/views/home_view.dart';
+import 'package:rtb_driver/app/modules/trips/views/trips_view.dart';
 
 import '../controllers/finish_trip_controller.dart';
 
@@ -21,7 +23,7 @@ class FinishTripView extends GetView<FinishTripController> {
                 GestureDetector(
                   child: Image.asset("assets/ic_close_black.png"),
                   onTap: (){
-                    Get.back();
+                    Get.offAll(() => HomeView());
                   },
                 ),
                 SizedBox(width: 24),
@@ -36,7 +38,7 @@ class FinishTripView extends GetView<FinishTripController> {
                 Text("Thank You", style: TextStyle(
                     color: Color.fromRGBO(255, 205, 56, 1.0),
                     fontSize: 20,
-                    fontWeight: FontWeight.bold
+                    fontFamily: "PoppinsBold",
                 )),
                 SizedBox(height: 16),
                 Row(
@@ -49,24 +51,29 @@ class FinishTripView extends GetView<FinishTripController> {
                         color: Color.fromRGBO(135, 141, 156, 1.0),
                         height: 1.5,
                         fontSize: 16,
-                        fontWeight: FontWeight.w500
+                        fontFamily: "PoppinsRegular",
                     )), flex: 1),
                     SizedBox(width: 24)
                   ],
                 )
               ],
             )),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("View All Trips", style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold
-                )),
-                SizedBox(width: 8),
-                Image.asset("assets/ic_yellow_arrow_right.png", height: 18, width: 18, fit: BoxFit.cover)
-              ],
+            GestureDetector(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text("View All Trips", style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: "PoppinsMedium",
+                  )),
+                  SizedBox(width: 8),
+                  Image.asset("assets/ic_yellow_arrow_right.png", height: 18, width: 18, fit: BoxFit.cover)
+                ],
+              ),
+              onTap: (){
+                Get.to(() => TripsView());
+              },
             ),
             SizedBox(height: 36)
           ],

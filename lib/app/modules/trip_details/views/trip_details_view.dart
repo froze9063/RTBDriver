@@ -27,7 +27,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                 Row(
                   children: [
                     GestureDetector(
-                      child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
+                      child: Image.asset("assets/ic_back_black.png", height: 20, width: 20),
                       onTap: (){
                         Get.to(() => MenusView());
                       },
@@ -35,7 +35,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                     Expanded(child: SizedBox(), flex: 1),
                     Text("Trip Details", style: TextStyle(
                         fontSize: 18,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: "PoppinsBold",
                         color: Color.fromRGBO(63, 61, 86, 1.0)
                     )),
                     Expanded(child: SizedBox(), flex: 1),
@@ -81,8 +81,8 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                     Text("SAB 4124",
                                         style: TextStyle(
                                             color: Color.fromRGBO(35, 35, 35, 1.0),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w700
+                                            fontSize: 17,
+                                            fontFamily: "PoppinsMedium"
                                         ))
                                   ],
                                 ))
@@ -101,15 +101,15 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   Text("Depart", style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "PoppinsRegular",
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   )),
 
                                   SizedBox(height: 8),
 
                                   Text("1:05 PM", style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 17,
+                                      fontFamily: "PoppinsBold",
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )),
 
@@ -117,7 +117,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   Text("12 June, Mon", style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "PoppinsRegular",
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   ))
                                 ],
@@ -131,15 +131,15 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   Text("Arrive", style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "PoppinsRegular",
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   )),
 
                                   SizedBox(height: 8),
 
                                   Text("1:05 PM", style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
+                                      fontSize: 17,
+                                      fontFamily: "PoppinsBold",
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )),
 
@@ -147,7 +147,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   Text("12 June, Mon", style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "PoppinsRegular",
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   ))
                                 ],
@@ -187,13 +187,13 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                     Text("Kuala Lumpur", style: TextStyle(
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
                                         fontSize: 14,
-                                        fontWeight: FontWeight.w700
+                                        fontFamily: "PoppinsMedium"
                                     )),
                                     SizedBox(height: 8),
                                     Text("TBS (Terminal Bersepadu Selatan)", style: TextStyle(
                                         color: Color.fromRGBO(63, 61, 86, 1.0),
                                         fontSize: 16,
-                                        fontWeight: FontWeight.w700
+                                        fontFamily: "PoppinsMedium"
                                     )),
                                     SizedBox(height: 24),
                                     Container(
@@ -205,13 +205,13 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                     Text("Penang", style: TextStyle(
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
                                         fontSize: 14,
-                                        fontWeight: FontWeight.w700
+                                        fontFamily: "PoppinsMedium"
                                     )),
                                     SizedBox(height: 8),
                                     Text("Sungai Nibong Bus Terminal", style: TextStyle(
                                         color: Color.fromRGBO(63, 61, 86, 1.0),
                                         fontSize: 16,
-                                        fontWeight: FontWeight.w700
+                                        fontFamily: "PoppinsMedium"
                                     )),
                                   ],
                                 ), flex: 1),
@@ -238,24 +238,19 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                   Text("Pick-up point", style: TextStyle(
                                       color: Color.fromRGBO(135, 141, 156, 1.0),
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500
+                                      fontFamily: "PoppinsRegular"
                                   )),
                                   SizedBox(height: 8),
                                   Text("Bay 5", style: TextStyle(
                                       color: Color.fromRGBO(63, 61, 86, 1.0),
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w700
+                                      fontFamily: "PoppinsMedium"
                                   ))
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
 
-                          SizedBox(height: 16),
+                              Expanded(child: SizedBox(), flex: 1),
 
-                          Row(
-                            children: [
-                              SizedBox(width: 24),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,16 +258,17 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                   Text("Drop-off point", style: TextStyle(
                                       color: Color.fromRGBO(135, 141, 156, 1.0),
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500
+                                      fontFamily: "PoppinsRegular"
                                   )),
                                   SizedBox(height: 8),
                                   Text("Bay 1", style: TextStyle(
                                       color: Color.fromRGBO(63, 61, 86, 1.0),
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w700
+                                      fontFamily: "PoppinsMedium"
                                   ))
                                 ],
-                              )
+                              ),
+                              SizedBox(width: 24),
                             ],
                           ),
 
@@ -287,7 +283,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                   Text("Total Passengers", style: TextStyle(
                                       color: Color.fromRGBO(135, 141, 156, 1.0),
                                       fontSize: 14,
-                                      fontWeight: FontWeight.normal
+                                      fontFamily: "PoppinsRegular"
                                   )),
 
                                   SizedBox(height: 8),
@@ -295,7 +291,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                   Text("39/40", style: TextStyle(
                                       color: Color.fromRGBO(63, 61, 86, 1.0),
                                       fontSize: 24,
-                                      fontWeight: FontWeight.bold
+                                      fontFamily: "PoppinsBold"
                                   ))
                                 ],
                               )
@@ -342,8 +338,8 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       children: [
                                         Text("View Seating", style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            fontFamily: "PoppinsMedium",
                                             color: Color.fromRGBO(255, 205, 56, 1.0)
                                         )),
                                         SizedBox(width: 16),
@@ -384,8 +380,8 @@ class TripDetailsView extends GetView<TripDetailsController> {
                   ],
                 ), flex: 1),
 
-                Padding(padding: EdgeInsets.only(bottom: 24), child: GestureDetector(
-                  child: ColoredButton(height: 45, width: double.maxFinite, title: "Begin Trip",
+                Padding(padding: EdgeInsets.only(bottom: 0), child: GestureDetector(
+                  child: ColoredButton(height: 55, width: double.maxFinite, title: "Begin Trip",
                       color: Color.fromRGBO(63, 61, 86, 1.0)),
                   onTap: (){
                       Get.to(() => EnRouteView());

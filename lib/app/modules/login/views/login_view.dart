@@ -44,100 +44,105 @@ class LoginView extends GetView<LoginController> {
               ),
             ),
 
-            Column(
-              children: [
-                SizedBox(height: 75),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: 75),
 
-                Image.asset("assets/img_splash_logo.png", height: 149,
-                    width: 179),
+                  Image.asset("assets/img_splash_logo.png", height: 149,
+                      width: 179),
 
-                Container(
-                  margin: EdgeInsets.only(left: 24, right: 24, top: 24),
-                  width: double.maxFinite,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(15),
+                  Container(
+                    margin: EdgeInsets.only(left: 24, right: 24, top: 24),
+                    width: double.maxFinite,
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
                       ),
-                    ),
-                    elevation: 1,
-                    child: Column(
-                      children: [
-                        Padding(
+                      elevation: 1,
+                      child: Column(
+                        children: [
+                          Padding(
                             padding: EdgeInsets.only(left: 24,right: 24, top: 24),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                              Text("Sign In", style: TextStyle(
-                                color: Color.fromRGBO(63, 61, 86, 1.0),
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold))
+                                Text("Sign In", style: TextStyle(
+                                    color: Color.fromRGBO(63, 61, 86, 1.0),
+                                    fontSize: 16,
+                                    fontFamily: "PoppinsBold"
+                                ))
                               ],
                             ),
-                        ),
+                          ),
 
-                        Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
-                            child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
-                            "Email", textEditingController: _loginController.emailEditingController,
-                                isSecure: false, isPasswordField: false, backgroundColor: Colors.white)),
+                          Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
+                              child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
+                              "Email", textEditingController: _loginController.emailEditingController,
+                                  isSecure: false, isPasswordField: false, backgroundColor: Colors.white)),
 
-                        Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
-                            child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
-                            "Password", textEditingController: _loginController.passwordEditingController,
-                                isSecure: true, isPasswordField: true, backgroundColor: Colors.white)),
+                          Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
+                              child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
+                              "Password", textEditingController: _loginController.passwordEditingController,
+                                  isSecure: true, isPasswordField: true, backgroundColor: Colors.white)),
 
-                        Padding(padding: EdgeInsets.only(left: 24, right: 24,top: 4),
-                            child: Row(
-                              children: [
-                                Container(
-                                  child: Checkbox(
-                                      value: true,
-                                      activeColor: Colors.white,
-                                      checkColor: Color.fromRGBO(255, 205, 56, 1.0),
-                                      onChanged: (value){
+                          Padding(padding: EdgeInsets.only(left: 24, right: 24,top: 4),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    child: Checkbox(
+                                        value: true,
+                                        activeColor: Colors.white,
+                                        checkColor: Color.fromRGBO(255, 205, 56, 1.0),
+                                        onChanged: (value){
 
-                                      }),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromRGBO(220, 220, 220, 1.0),
-                                      width: 1
+                                        }),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Color.fromRGBO(220, 220, 220, 1.0),
+                                            width: 1
+                                        ),
+                                        borderRadius: BorderRadius.all(Radius.circular(8))
                                     ),
-                                    borderRadius: BorderRadius.all(Radius.circular(8))
+                                    height: 24,
+                                    width: 24,
                                   ),
-                                  height: 24,
-                                  width: 24,
-                                ),
 
-                                SizedBox(width: 8),
+                                  SizedBox(width: 8),
 
-                                Text("Remember me", style: TextStyle(
+                                  Text("Remember me", style: TextStyle(
                                     fontSize: 14,
                                     color: Color.fromRGBO(135, 141, 156, 1.0),
-                                    fontWeight: FontWeight.w500)),
+                                    fontFamily: "PoppinsRegular",
 
-                                Expanded(child: SizedBox(), flex: 1),
+                                  )),
 
-                                Text("Forgot Password?", style: TextStyle(
-                                   fontSize: 14,
-                                    color: Color.fromRGBO(255, 205, 56, 1.0),
-                                    fontWeight: FontWeight.w500))
-                              ],
-                            )),
+                                  Expanded(child: SizedBox(), flex: 1),
 
-                        Padding(padding: EdgeInsets.only(top: 36, left: 24, right: 24, bottom: 24), child: GestureDetector(
-                          child: ColoredButton(height: 45, width: double.maxFinite, title: "Sign In",
-                              color: Color.fromRGBO(255, 205, 56, 1.0)),
-                          onTap: (){
-                            Get.to(() => HomeView());
-                          },
-                        )),
-                      ],
+                                  Text("Forgot Password?", style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color.fromRGBO(255, 205, 56, 1.0),
+                                      fontFamily: "PoppinsMedium"))
+                                ],
+                              )),
+
+                          Padding(padding: EdgeInsets.only(top: 36, left: 24, right: 24, bottom: 24), child: GestureDetector(
+                            child: ColoredButton(height: 45, width: double.maxFinite, title: "Sign In",
+                                color: Color.fromRGBO(255, 205, 56, 1.0)),
+                            onTap: (){
+                              Get.to(() => HomeView());
+                            },
+                          )),
+                        ],
+                      ),
                     ),
-                  ),
-                )
+                  )
 
-              ],
+                ],
+              ),
             )
           ],
         ),
