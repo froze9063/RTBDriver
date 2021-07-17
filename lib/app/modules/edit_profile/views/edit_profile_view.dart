@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:rtb_driver/app/modules/edit_profile/controllers/edit_profile_controller.dart';
+import 'package:rtb_driver/app/modules/login/views/login_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
+
+  EditProfileController _editProfileController = Get.put(EditProfileController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +36,9 @@ class EditProfileView extends GetView<EditProfileController> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("Edit Profile", style: TextStyle(
-                      fontSize: 16,
-                      color: Color.fromRGBO(63, 61, 86, 1.0),
-                      fontWeight: FontWeight.bold
+                     fontSize: 16,
+                     color: Color.fromRGBO(63, 61, 86, 1.0),
+                     fontFamily: "PoppinsBold",
                   ), textAlign: TextAlign.center,)
                 ],
               ),
@@ -55,6 +59,7 @@ class EditProfileView extends GetView<EditProfileController> {
                     elevation: 2,
                     color: Colors.white,
                     child: Container(
+                      margin: EdgeInsets.only(top: 75),
                       width: double.maxFinite,
                       height: double.maxFinite,
                       padding: EdgeInsets.all(24),
@@ -63,219 +68,279 @@ class EditProfileView extends GetView<EditProfileController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 45),
-
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Email",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
-
-                                SizedBox(height: 16),
-
-                                Text("johntravisscott@ridethebee.com", style: TextStyle(
-                                    fontSize: 14,
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: Text("johntravisscott@ridethebee.com", style: TextStyle(
+                                    fontSize: 15,
                                     color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
+                                    fontFamily: "PoppinsMedium"
                                 )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Color.fromRGBO(195, 194, 204, 0.5)
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("Full Name Per IC",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
-
-                                SizedBox(height: 16),
-
-                                Text("John Travis Scott Travolta", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                            //Fullname
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: TextField(
+                                  controller: _editProfileController.textEditingController,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(63, 61, 86, 1.0),
+                                      fontSize: 15,
+                                      fontFamily: "PoppinsMedium"
+                                  ),
+                                  decoration: new InputDecoration.collapsed(
+                                      hintText: "Fullname"
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("Mobile No.",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
-
-                                SizedBox(height: 16),
-
-                                Text("+65 4589 0321", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                            //Phone Number
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: TextField(
+                                  controller: _editProfileController.phoneEditingController,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(63, 61, 86, 1.0),
+                                      fontSize: 15,
+                                      fontFamily: "PoppinsMedium"
+                                  ),
+                                  decoration: new InputDecoration.collapsed(
+                                      hintText: "Phone Number"
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("IC No.",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
-
-                                SizedBox(height: 16),
-
-                                Text("S2459077A", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                            //IC No
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: TextField(
+                                  controller: _editProfileController.codeEditingController,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(63, 61, 86, 1.0),
+                                      fontSize: 15,
+                                      fontFamily: "PoppinsMedium"
+                                  ),
+                                  decoration: new InputDecoration.collapsed(
+                                      hintText: "IC No"
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("License No.",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
-
-                                SizedBox(height: 16),
-
-                                Text("S1234567A", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                            // License No
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: TextField(
+                                  controller: _editProfileController.licenceEditingController,
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(63, 61, 86, 1.0),
+                                      fontSize: 15,
+                                      fontFamily: "PoppinsMedium"
+                                  ),
+                                  decoration: new InputDecoration.collapsed(
+                                      hintText: "License No"
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("Company",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: Row(
+                                  children: [
+                                    Expanded(child: Text("Ride The Bee", style: TextStyle(
+                                        fontSize: 15,
+                                        color: Color.fromRGBO(63, 61, 86, 1.0),
+                                        fontFamily: "PoppinsMedium"
+                                    )), flex: 1),
 
-                                SizedBox(height: 16),
-
-                                Text("Ride The Bee", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
-
-                                SizedBox(height: 16),
-
-                                Container(
-                                  width: double.maxFinite,
-                                  height: 1,
-                                  color: Color.fromRGBO(240, 240, 239, 1.0),
-                                )
-                              ],
+                                    Image.asset("assets/ic_yellow_dropdown.png", width: 16, height: 16, fit: BoxFit.contain)
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 16),
+                            SizedBox(height: 16),
 
-                                Text("Bus No.",
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(135, 141, 156, 1.0),
-                                        fontWeight: FontWeight.normal
-                                    )),
+                            // Bus No
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        controller: _editProfileController.busNoEditingController,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(63, 61, 86, 1.0),
+                                            fontSize: 15,
+                                            fontFamily: "PoppinsMedium"
+                                        ),
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "Bus No"
+                                        ),
+                                      ),
+                                      flex: 1,
+                                    ),
 
-                                SizedBox(height: 16),
+                                    Image.asset("assets/ic_search_yellow.png", width: 16, height: 16)
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
 
-                                Text("SBA 4124", style: TextStyle(
-                                    fontSize: 14,
-                                    color: Color.fromRGBO(63, 61, 86, 1.0),
-                                    fontWeight: FontWeight.w700
-                                )),
+                            SizedBox(height: 16),
 
-                                SizedBox(height: 16),
-                              ],
+                            //Password
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        controller: _editProfileController.passwordEditingController,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(63, 61, 86, 1.0),
+                                            fontSize: 15,
+                                            fontFamily: "PoppinsMedium"
+                                        ),
+                                        obscureText: true,
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "Password"
+                                        ),
+                                      ),
+                                      flex: 1,
+                                    ),
+
+                                    Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(height: 16),
+
+                            //Confirm Password
+                            Card(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(8))
+                              ),
+                              child: Container(
+                                width: double.maxFinite,
+                                padding: EdgeInsets.all(16),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: TextField(
+                                        controller: _editProfileController.confirmPasswordEditingController,
+                                        style: TextStyle(
+                                            color: Color.fromRGBO(63, 61, 86, 1.0),
+                                            fontSize: 15,
+                                            fontFamily: "PoppinsMedium"
+                                        ),
+                                        obscureText: true,
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "Confirm Password"
+                                        ),
+                                      ),
+                                      flex: 1,
+                                    ),
+
+                                    Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
+                                  ],
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                                    color: Colors.white
+                                ),
+                              ),
                             ),
 
                             Padding(padding: EdgeInsets.only(top: 36), child: GestureDetector(
-                              child: ColoredButton(height: 45, width: double.maxFinite, title: "Edit Profile",
+                              child: ColoredButton(height: 45, width: double.maxFinite, title: "Update Profile",
                                   color: Color.fromRGBO(255, 205, 56, 1.0)),
                               onTap: (){
 
@@ -287,17 +352,22 @@ class EditProfileView extends GetView<EditProfileController> {
                     ),
                   ), flex: 1),
 
-                  Container(
-                    width: double.maxFinite,
-                    height: 75,
-                    color: Color.fromRGBO(250, 250, 250, 1.0),
-                    child: Center(
-                      child: Text("Log Out", style: TextStyle(
+                  GestureDetector(
+                    child: Container(
+                      width: double.maxFinite,
+                      height: 75,
+                      color: Color.fromRGBO(250, 250, 250, 1.0),
+                      child: Center(
+                        child: Text("Log Out", style: TextStyle(
                           fontSize: 16,
                           color: Color.fromRGBO(255, 205, 56, 1.0),
-                          fontWeight: FontWeight.bold
-                      )),
+                          fontFamily: "PoppinsBold",
+                        )),
+                      ),
                     ),
+                    onTap: (){
+                      Get.offAll(() => LoginView());
+                    },
                   ),
                 ],
               ),

@@ -7,6 +7,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:rtb_driver/app/modules/chat/views/chat_view.dart';
 import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/menus/views/menus_view.dart';
+import 'package:rtb_driver/app/modules/messages/views/messages_view.dart';
 import 'package:rtb_driver/app/modules/notification/views/notification_view.dart';
 
 import '../controllers/pit_stop_controller.dart';
@@ -143,7 +144,7 @@ class PitStopView extends GetView<PitStopController> {
                           ),
                         ),
                         onTap: (){
-                          Get.to(() => ChatView());
+                          Get.to(() => MessagesView());
                         },
                       ),
 
@@ -253,7 +254,7 @@ class PitStopView extends GetView<PitStopController> {
                          color: Colors.white,
                          fontSize: 16,
                          fontFamily: "PoppinsBold",
-                         decoration: TextDecoration.none
+                         decoration: TextDecoration.none,
                        )),
                      ),
                    ),
@@ -261,6 +262,7 @@ class PitStopView extends GetView<PitStopController> {
                      Get.back();
                    },
                  )
+
                 ],
               ),
             ),

@@ -47,11 +47,11 @@ class ScheduledView extends StatelessWidget{
                         height: 220,
                         padding: EdgeInsets.only(left: 24, right: 24, top: 16,bottom: 16),
                         decoration: BoxDecoration(
-                            color: Color.fromRGBO(248, 255, 249, 1.0),
+                            color: index == 0 ? Color.fromRGBO(248, 255, 249, 1.0) : Colors.white,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             border: Border.all(
-                                width: 1,
-                                color: Color.fromRGBO(22, 212, 98, 1.0)
+                                width: index == 0 ? 1 : 2,
+                                color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0)
                             )
                         ),
                         child: Column(
@@ -81,7 +81,7 @@ class ScheduledView extends StatelessWidget{
                                 Text("17-06-2021", style: TextStyle(
                                     fontSize: 14,
                                     fontFamily: "PoppinsBold",
-                                    color: Color.fromRGBO(22, 212, 98, 1.0)
+                                    color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(255, 205, 56, 1.0)
                                 )),
 
                                 Expanded(child: SizedBox(), flex: 1),
@@ -89,7 +89,7 @@ class ScheduledView extends StatelessWidget{
                                 Text("17-06-2021", style: TextStyle(
                                     fontSize: 14,
                                     fontFamily: "PoppinsBold",
-                                    color: Color.fromRGBO(22, 212, 98, 1.0)
+                                    color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(255, 205, 56, 1.0)
                                 )),
                               ],
                             ),
@@ -111,7 +111,7 @@ class ScheduledView extends StatelessWidget{
                                   padding: EdgeInsets.only(left: 12, right: 12, top: 4,bottom: 4),
                                 ),
 
-                                Expanded(child: Image.asset("assets/ic_track.png"), flex: 1),
+                                Expanded(child: index == 0 ? Image.asset("assets/ic_track.png") : Image.asset("assets/ic_track_yellow.png"), flex: 1),
 
                                 Container(
                                   child: Text("To", style: TextStyle(
@@ -145,7 +145,7 @@ class ScheduledView extends StatelessWidget{
                                     Text("Kuala Lumpur", style: TextStyle(
                                         fontSize: 14,
                                         fontFamily: "PoppinsBold",
-                                        color: Color.fromRGBO(22, 212, 98, 1.0)
+                                        color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(255, 205, 56, 1.0)
                                     ))
                                   ],
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -169,7 +169,7 @@ class ScheduledView extends StatelessWidget{
                                     Text("Kuala Lumpur", style: TextStyle(
                                         fontSize: 14,
                                         fontFamily: "PoppinsBold",
-                                        color: Color.fromRGBO(22, 212, 98, 1.0)
+                                        color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(255, 205, 56, 1.0)
                                     ))
                                   ],
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -199,16 +199,16 @@ class ScheduledView extends StatelessWidget{
                                           bottomRight: Radius.circular(25)),
                                       border: Border(
                                           bottom: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           right: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           top: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           left: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1)
                                       )
                                   ),
@@ -242,16 +242,16 @@ class ScheduledView extends StatelessWidget{
                                           topRight: Radius.circular(25)),
                                       border: Border(
                                           bottom: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           right: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           top: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1),
                                           left: BorderSide(
-                                              color: Color.fromRGBO(22, 212, 98, 1.0),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1)
                                       )
                                   ),

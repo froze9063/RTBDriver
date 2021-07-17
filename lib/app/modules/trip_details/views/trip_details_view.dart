@@ -105,15 +105,11 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   )),
 
-                                  SizedBox(height: 8),
-
                                   Text("1:05 PM", style: TextStyle(
                                       fontSize: 17,
                                       fontFamily: "PoppinsBold",
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )),
-
-                                  SizedBox(height: 8),
 
                                   Text("12 June, Mon", style: TextStyle(
                                       fontSize: 14,
@@ -135,15 +131,11 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                       color: Color.fromRGBO(135, 141, 156, 1.0)
                                   )),
 
-                                  SizedBox(height: 8),
-
                                   Text("1:05 PM", style: TextStyle(
                                       fontSize: 17,
                                       fontFamily: "PoppinsBold",
                                       color: Color.fromRGBO(63, 61, 86, 1.0)
                                   )),
-
-                                  SizedBox(height: 8),
 
                                   Text("12 June, Mon", style: TextStyle(
                                       fontSize: 14,
@@ -158,7 +150,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                           ),
 
                           Container(
-                            margin: EdgeInsets.only(top: 24, left: 24, right: 24),
+                            margin: EdgeInsets.only(top: 16, left: 24, right: 24),
                             width: double.maxFinite,
                             height: 1,
                             color: Color.fromRGBO(240, 240, 239, 1.0),
@@ -195,13 +187,13 @@ class TripDetailsView extends GetView<TripDetailsController> {
                                         fontSize: 16,
                                         fontFamily: "PoppinsMedium"
                                     )),
-                                    SizedBox(height: 24),
+                                    SizedBox(height: 16),
                                     Container(
                                       width: double.maxFinite,
                                       height: 1,
                                       color: Color.fromRGBO(236, 239, 241, 1.0),
                                     ),
-                                    SizedBox(height: 24),
+                                    SizedBox(height: 16),
                                     Text("Penang", style: TextStyle(
                                         color: Color.fromRGBO(135, 141, 156, 1.0),
                                         fontSize: 14,
@@ -290,7 +282,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
 
                                   Text("39/40", style: TextStyle(
                                       color: Color.fromRGBO(63, 61, 86, 1.0),
-                                      fontSize: 24,
+                                      fontSize: 30,
                                       fontFamily: "PoppinsBold"
                                   ))
                                 ],
@@ -298,7 +290,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                             ],
                           ),
 
-                          SizedBox(height: 24)
+                          SizedBox(height: 32)
 
                         ],
                       ),
@@ -373,7 +365,7 @@ class TripDetailsView extends GetView<TripDetailsController> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 115)
+                          SizedBox(height: 155)
                         ],
                       ),
                     )

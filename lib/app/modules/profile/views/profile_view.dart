@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:rtb_driver/app/modules/edit_profile/views/edit_profile_view.dart';
+import 'package:rtb_driver/app/modules/login/views/login_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
 
 import '../controllers/profile_controller.dart';
@@ -289,17 +290,22 @@ class ProfileView extends GetView<ProfileController> {
                     ),
                   ), flex: 1),
 
-                  Container(
-                    width: double.maxFinite,
-                    height: 75,
-                    color: Color.fromRGBO(250, 250, 250, 1.0),
-                    child: Center(
-                      child: Text("Log Out", style: TextStyle(
+                  GestureDetector(
+                    child: Container(
+                      width: double.maxFinite,
+                      height: 75,
+                      color: Color.fromRGBO(250, 250, 250, 1.0),
+                      child: Center(
+                        child: Text("Log Out", style: TextStyle(
                           fontSize: 16,
                           color: Color.fromRGBO(255, 205, 56, 1.0),
-                          fontWeight: FontWeight.bold
-                      )),
+                          fontFamily: "PoppinsBold",
+                        )),
+                      ),
                     ),
+                    onTap: (){
+                      Get.offAll(() => LoginView());
+                    },
                   ),
                 ],
               ),

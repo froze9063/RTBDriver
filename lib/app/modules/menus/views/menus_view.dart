@@ -16,7 +16,7 @@ class MenusView extends GetView<MenusController> {
         children: [
           Container(
             width: double.maxFinite,
-            height: 350,
+            height: 400,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),
               bottomRight: Radius.circular(25))
@@ -52,7 +52,7 @@ class MenusView extends GetView<MenusController> {
                     ],
                   )),
 
-                  SizedBox(height: 16),
+                  SizedBox(height: 36),
 
                   Image.asset("assets/img_driver_home.png", height: 75, width: 75),
 
@@ -101,7 +101,7 @@ class MenusView extends GetView<MenusController> {
                   SizedBox(height: 16),
 
                   Card(
-                    elevation: 5,
+                    elevation: 1,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(12))
                     ),
@@ -111,10 +111,13 @@ class MenusView extends GetView<MenusController> {
                         children: [
                           Column(
                             children: [
+                              SizedBox(height: 8),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Image.asset("assets/ic_yellow_home.png", height: 24, width: 24),
-                                  SizedBox(width: 8),
+                                  SizedBox(width: 16),
                                   Expanded(child: Text("Home", style: TextStyle(
                                       fontSize: 15,
                                       fontFamily: "PoppinsMedium",
@@ -139,9 +142,11 @@ class MenusView extends GetView<MenusController> {
                               children: [
                                 SizedBox(height: 24),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset("assets/ic_yellow_trips.png", height: 24, width: 24),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 16),
                                     Expanded(child: Text("All Trips", style: TextStyle(
                                         fontSize: 15,
                                         fontFamily: "PoppinsMedium",
@@ -171,9 +176,11 @@ class MenusView extends GetView<MenusController> {
                               children: [
                                 SizedBox(height: 24),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset("assets/ic_yellow_chat.png", height: 24, width: 24),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 16),
                                     Expanded(child: Text("Messages", style: TextStyle(
                                         fontSize: 15,
                                         fontFamily: "PoppinsMedium",
@@ -202,9 +209,11 @@ class MenusView extends GetView<MenusController> {
                               children: [
                                 SizedBox(height: 24),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset("assets/ic_yellow_reviews.png", height: 24, width: 24),
-                                    SizedBox(width: 8),
+                                    SizedBox(width: 16),
                                     Expanded(child: Text("Reviews", style: TextStyle(
                                         fontSize: 15,
                                         fontFamily: "PoppinsMedium",
@@ -214,7 +223,7 @@ class MenusView extends GetView<MenusController> {
                                   ],
                                 ),
 
-                                SizedBox(height: 24),
+                                SizedBox(height: 8),
                               ],
                             ),
                             onTap: (){
