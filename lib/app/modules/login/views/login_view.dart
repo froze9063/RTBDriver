@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:rtb_driver/app/callback/custom_edittext_callback.dart';
 import 'package:rtb_driver/app/modules/home/views/home_view.dart';
 import 'package:rtb_driver/app/widgets/colored_button.dart';
 import 'package:rtb_driver/app/widgets/custom_edittext.dart';
 
 import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
+class LoginView extends GetView<LoginController> implements CustomEdittextCallback{
 
   LoginController _loginController = Get.put(LoginController());
 
@@ -79,15 +80,26 @@ class LoginView extends GetView<LoginController> {
                             ),
                           ),
 
-                          Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
-                              child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
-                              "Email", textEditingController: _loginController.emailEditingController,
-                                  isSecure: false, isPasswordField: false, backgroundColor: Colors.white)),
+                          GetBuilder<LoginController>(
+                            id: "border_color",
+                            init: LoginController(),
+                            builder: (value) => Column(
+                              children: [
+                                Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
+                                    child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
+                                    "Email", textEditingController: _loginController.emailEditingController,
+                                        isSecure: false, isPasswordField: false, backgroundColor: Colors.white, borderColor: value.emailBorderColor,type: "email"
+                                        ,customEdittextCallback: this)),
 
-                          Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
-                              child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
-                              "Password", textEditingController: _loginController.passwordEditingController,
-                                  isSecure: true, isPasswordField: true, backgroundColor: Colors.white)),
+                                Padding(padding: EdgeInsets.only(left: 24,right: 24, top: 16),
+                                    child: CustomEditText(height: 55, width: double.maxFinite, placeholder:
+                                    "Password", textEditingController: _loginController.passwordEditingController,
+                                        isSecure: true, isPasswordField: true, backgroundColor: Colors.white,
+                                        borderColor: value.passwordBorderColor,type: "password"
+                                        ,customEdittextCallback: this)),
+                              ],
+                            ),
+                          ),
 
                           Padding(padding: EdgeInsets.only(left: 24, right: 24,top: 4),
                               child: Row(
@@ -148,5 +160,9 @@ class LoginView extends GetView<LoginController> {
         ),
       ),
     );
+  }
+
+  onChanged(text, type){
+    _loginController.changeBorderColor(text, type);
   }
 }
