@@ -20,6 +20,7 @@ abstract class Routes {
   static const SEAT_CHART = _Paths.SEAT_CHART;
   static const EN_ROUTE = _Paths.EN_ROUTE;
   static const PIT_STOP = _Paths.PIT_STOP;
+  static const EXAMPLE = _Paths.EXAMPLE;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const SEAT_CHART = '/seat-chart';
   static const EN_ROUTE = '/en-route';
   static const PIT_STOP = '/pit-stop';
+  static const EXAMPLE = '/example';
 }

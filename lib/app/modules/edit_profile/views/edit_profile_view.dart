@@ -90,7 +90,10 @@ class EditProfileView extends GetView<EditProfileController> {
                             SizedBox(height: 16),
 
                             //Fullname
-                            Card(
+                            GetBuilder<EditProfileController>(
+                              id: "fullname_color",
+                              init: EditProfileController(),
+                              builder: (value) => Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(8))
                               ),
@@ -99,6 +102,14 @@ class EditProfileView extends GetView<EditProfileController> {
                                 padding: EdgeInsets.all(16),
                                 child: TextField(
                                   controller: _editProfileController.textEditingController,
+                                  onChanged: (text){
+                                    if(text.isNotEmpty){
+                                      value.setFullnameBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                    }
+                                    else{
+                                      value.setFullnameBorder(Colors.white);
+                                    }
+                                  },
                                   style: TextStyle(
                                       color: Color.fromRGBO(63, 61, 86, 1.0),
                                       fontSize: 15,
@@ -110,94 +121,143 @@ class EditProfileView extends GetView<EditProfileController> {
                                 ),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      width: 1,
+                                      color: value.fullnameBorderColor
+                                    )
                                 ),
                               ),
-                            ),
+                            )),
 
                             SizedBox(height: 16),
 
                             //Phone Number
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: TextField(
-                                  controller: _editProfileController.phoneEditingController,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(63, 61, 86, 1.0),
-                                      fontSize: 15,
-                                      fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "phone_color",
+                                init: EditProfileController(),
+                                builder: (value) => Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
                                   ),
-                                  decoration: new InputDecoration.collapsed(
-                                      hintText: "Phone Number"
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: TextField(
+                                      controller: _editProfileController.phoneEditingController,
+                                      onChanged: (text){
+                                        if(text.isNotEmpty){
+                                          value.setPhoneBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                        }
+                                        else{
+                                          value.setPhoneBorder(Colors.white);
+                                        }
+                                      },
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(63, 61, 86, 1.0),
+                                          fontSize: 15,
+                                          fontFamily: "PoppinsMedium"
+                                      ),
+                                      decoration: new InputDecoration.collapsed(
+                                          hintText: "Phone Number"
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.phoneBorderColor
+                                        )
+                                    ),
                                   ),
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
+                                )),
 
                             SizedBox(height: 16),
 
                             //IC No
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: TextField(
-                                  controller: _editProfileController.codeEditingController,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(63, 61, 86, 1.0),
-                                      fontSize: 15,
-                                      fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "code_color",
+                                init: EditProfileController(),
+                                builder: (value) => Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
                                   ),
-                                  decoration: new InputDecoration.collapsed(
-                                      hintText: "IC No"
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: TextField(
+                                      controller: _editProfileController.codeEditingController,
+                                      onChanged: (text){
+                                        if(text.isNotEmpty){
+                                          value.setCodeBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                        }
+                                        else{
+                                          value.setCodeBorder(Colors.white);
+                                        }
+                                      },
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(63, 61, 86, 1.0),
+                                          fontSize: 15,
+                                          fontFamily: "PoppinsMedium"
+                                      ),
+                                      decoration: new InputDecoration.collapsed(
+                                          hintText: "IC No"
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.codeBorderColor
+                                        )
+                                    ),
                                   ),
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
+                                )),
 
                             SizedBox(height: 16),
 
                             // License No
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: TextField(
-                                  controller: _editProfileController.licenceEditingController,
-                                  style: TextStyle(
-                                      color: Color.fromRGBO(63, 61, 86, 1.0),
-                                      fontSize: 15,
-                                      fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "licence_color",
+                                init: EditProfileController(),
+                                builder: (value) => Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
                                   ),
-                                  decoration: new InputDecoration.collapsed(
-                                      hintText: "License No"
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: TextField(
+                                      controller: _editProfileController.licenceEditingController,
+                                      onChanged: (text){
+                                        if(text.isNotEmpty){
+                                          value.setLicenceBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                        }
+                                        else{
+                                          value.setLicenceBorder(Colors.white);
+                                        }
+                                      },
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(63, 61, 86, 1.0),
+                                          fontSize: 15,
+                                          fontFamily: "PoppinsMedium"
+                                      ),
+                                      decoration: new InputDecoration.collapsed(
+                                          hintText: "License No"
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.licenceBorderColor
+                                        )
+                                    ),
                                   ),
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
+                                )),
 
                             SizedBox(height: 16),
 
@@ -229,115 +289,161 @@ class EditProfileView extends GetView<EditProfileController> {
                             SizedBox(height: 16),
 
                             // Bus No
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: TextField(
-                                        controller: _editProfileController.busNoEditingController,
-                                        style: TextStyle(
-                                            color: Color.fromRGBO(63, 61, 86, 1.0),
-                                            fontSize: 15,
-                                            fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "bus_color",
+                                init: EditProfileController(),
+                                builder: (value) => Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
+                                  ),
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextField(
+                                            controller: _editProfileController.busNoEditingController,
+                                            onChanged: (text){
+                                              if(text.isNotEmpty){
+                                                value.setBusNoBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                              }
+                                              else{
+                                                value.setBusNoBorder(Colors.white);
+                                              }
+                                            },
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(63, 61, 86, 1.0),
+                                                fontSize: 15,
+                                                fontFamily: "PoppinsMedium"
+                                            ),
+                                            decoration: new InputDecoration.collapsed(
+                                                hintText: "Bus No"
+                                            ),
+                                          ),
+                                          flex: 1,
                                         ),
-                                        decoration: new InputDecoration.collapsed(
-                                            hintText: "Bus No"
-                                        ),
-                                      ),
-                                      flex: 1,
-                                    ),
 
-                                    Image.asset("assets/ic_search_yellow.png", width: 16, height: 16)
-                                  ],
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
+                                        Image.asset("assets/ic_search_yellow.png", width: 16, height: 16)
+                                      ],
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.busNoBorderColor
+                                        )
+                                    ),
+                                  ),
+                                )),
 
                             SizedBox(height: 16),
 
                             //Password
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: TextField(
-                                        controller: _editProfileController.passwordEditingController,
-                                        style: TextStyle(
-                                            color: Color.fromRGBO(63, 61, 86, 1.0),
-                                            fontSize: 15,
-                                            fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "password_color",
+                                init: EditProfileController(),
+                                builder: (value) =>       Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
+                                  ),
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextField(
+                                            controller: _editProfileController.passwordEditingController,
+                                            onChanged: (text){
+                                              if(text.isNotEmpty){
+                                                value.setPasswordNoBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                              }
+                                              else{
+                                                value.setPasswordNoBorder(Colors.white);
+                                              }
+                                            },
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(63, 61, 86, 1.0),
+                                                fontSize: 15,
+                                                fontFamily: "PoppinsMedium"
+                                            ),
+                                            obscureText: true,
+                                            decoration: new InputDecoration.collapsed(
+                                                hintText: "Password"
+                                            ),
+                                          ),
+                                          flex: 1,
                                         ),
-                                        obscureText: true,
-                                        decoration: new InputDecoration.collapsed(
-                                            hintText: "Password"
-                                        ),
-                                      ),
-                                      flex: 1,
-                                    ),
 
-                                    Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
-                                  ],
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
+                                        Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
+                                      ],
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.passwordBorderColor
+                                        )
+                                    ),
+                                  ),
+                                )
                             ),
 
                             SizedBox(height: 16),
 
                             //Confirm Password
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(8))
-                              ),
-                              child: Container(
-                                width: double.maxFinite,
-                                padding: EdgeInsets.all(16),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: TextField(
-                                        controller: _editProfileController.confirmPasswordEditingController,
-                                        style: TextStyle(
-                                            color: Color.fromRGBO(63, 61, 86, 1.0),
-                                            fontSize: 15,
-                                            fontFamily: "PoppinsMedium"
+                            GetBuilder<EditProfileController>(
+                                id: "confirm_color",
+                                init: EditProfileController(),
+                                builder: (value) => Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(8))
+                                  ),
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    padding: EdgeInsets.all(16),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          child: TextField(
+                                            controller: _editProfileController.confirmPasswordEditingController,
+                                            onChanged: (text){
+                                              if(text.isNotEmpty){
+                                                value.setConfirmPasswordNoBorder(Color.fromRGBO(255, 205, 56, 1.0));
+                                              }
+                                              else{
+                                                value.setConfirmPasswordNoBorder(Colors.white);
+                                              }
+                                            },
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(63, 61, 86, 1.0),
+                                                fontSize: 15,
+                                                fontFamily: "PoppinsMedium"
+                                            ),
+                                            obscureText: true,
+                                            decoration: new InputDecoration.collapsed(
+                                                hintText: "Confirm Password"
+                                            ),
+                                          ),
+                                          flex: 1,
                                         ),
-                                        obscureText: true,
-                                        decoration: new InputDecoration.collapsed(
-                                            hintText: "Confirm Password"
-                                        ),
-                                      ),
-                                      flex: 1,
-                                    ),
 
-                                    Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
-                                  ],
-                                ),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                    color: Colors.white
-                                ),
-                              ),
-                            ),
+                                        Image.asset("assets/ic_eye_open.png", width: 16, height: 16)
+                                      ],
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                                        color: Colors.white,
+                                        border: Border.all(
+                                            width: 1,
+                                            color: value.confirmPasswordBorderColor
+                                        )
+                                    ),
+                                  ),
+                                )),
 
                             Padding(padding: EdgeInsets.only(top: 36), child: GestureDetector(
                               child: ColoredButton(height: 45, width: double.maxFinite, title: "Update Profile",

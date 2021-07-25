@@ -37,14 +37,13 @@ class ScheduledView extends StatelessWidget{
             return Padding(padding: EdgeInsets.only(left: 24, right: 24, top: index == 0 ? 0 : 16), child: GestureDetector(
               child: Container(
                 width: double.maxFinite,
-                height: 235,
+                height: 245,
                 child: Stack(
                   children: [
                     Positioned.fill(child: Align(
                       child: Container(
-                        margin: EdgeInsets.only(top: 2),
+                        margin: EdgeInsets.only(top: 8, bottom: 8),
                         width: double.maxFinite,
-                        height: 220,
                         padding: EdgeInsets.only(left: 24, right: 24, top: 16,bottom: 16),
                         decoration: BoxDecoration(
                             color: index == 0 ? Color.fromRGBO(248, 255, 249, 1.0) : Colors.white,
@@ -233,7 +232,7 @@ class ScheduledView extends StatelessWidget{
                             Stack(
                               children: [
                                 Container(
-                                  height: 20,
+                                  height: 19,
                                   width: 35,
                                   decoration: BoxDecoration(
                                       color: Colors.white,
@@ -255,11 +254,12 @@ class ScheduledView extends StatelessWidget{
                                               width: 1)
                                       )
                                   ),
+                                  margin: EdgeInsets.only(bottom: 1),
                                 ),
 
                                 Positioned.fill(child: Align(
                                   child: Container(
-                                    height: 6,
+                                    height: 8,
                                     width: 35,
                                     color: Colors.white,
                                   ),

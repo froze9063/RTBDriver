@@ -6,6 +6,8 @@ import 'package:rtb_driver/app/modules/edit_profile/bindings/edit_profile_bindin
 import 'package:rtb_driver/app/modules/edit_profile/views/edit_profile_view.dart';
 import 'package:rtb_driver/app/modules/en_route/bindings/en_route_binding.dart';
 import 'package:rtb_driver/app/modules/en_route/views/en_route_view.dart';
+import 'package:rtb_driver/app/modules/example/bindings/example_binding.dart';
+import 'package:rtb_driver/app/modules/example/views/example_view.dart';
 import 'package:rtb_driver/app/modules/finish_trip/bindings/finish_trip_binding.dart';
 import 'package:rtb_driver/app/modules/finish_trip/views/finish_trip_view.dart';
 import 'package:rtb_driver/app/modules/home/bindings/home_binding.dart';
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.PIT_STOP,
       page: () => PitStopView(),
       binding: PitStopBinding(),
+    ),
+    GetPage(
+      name: _Paths.EXAMPLE,
+      page: () => ExampleView(),
+      binding: ExampleBinding(),
     ),
   ];
 }

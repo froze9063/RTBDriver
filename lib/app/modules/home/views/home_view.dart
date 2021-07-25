@@ -146,7 +146,7 @@ class HomeView extends GetView<HomeController> {
                       margin: EdgeInsets.only(top: 16),
                       padding: EdgeInsets.only(left: 36, right: 36, top: 10, bottom: 10),
                       child: Text("View Profile", style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontFamily: "PoppinsBold",
                           color: Color.fromRGBO(255, 205, 56, 1.0)
                       )),
@@ -351,7 +351,7 @@ class HomeView extends GetView<HomeController> {
                                   Stack(
                                     children: [
                                       Container(
-                                        height: 20,
+                                        height: 19,
                                         width: 35,
                                         decoration: BoxDecoration(
                                             color: Colors.white,
@@ -372,6 +372,7 @@ class HomeView extends GetView<HomeController> {
                                                     width: 1)
                                             )
                                         ),
+                                        margin: EdgeInsets.only(top: 1),
                                       ),
 
                                       Container(
@@ -415,6 +416,7 @@ class HomeView extends GetView<HomeController> {
                                                     width: 1)
                                             )
                                         ),
+                                        margin: EdgeInsets.only(bottom: 1),
                                       ),
 
                                       Positioned.fill(child: Align(
