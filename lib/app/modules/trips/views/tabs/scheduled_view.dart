@@ -51,7 +51,15 @@ class ScheduledView extends StatelessWidget{
                             border: Border.all(
                                 width: index == 0 ? 1 : 2,
                                 color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0)
-                            )
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromRGBO(220, 220, 224, 0.5),
+                                blurRadius: 0.5,
+                                spreadRadius: 0.5,
+                                offset: Offset(0.5, 0.5), // shadow direction: bottom right
+                              )
+                            ]
                         ),
                         child: Column(
                           children: [
@@ -209,7 +217,15 @@ class ScheduledView extends StatelessWidget{
                                           left: BorderSide(
                                               color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
                                               width: 1)
-                                      )
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color.fromRGBO(220, 220, 224, 0.5),
+                                          blurRadius: 0.5,
+                                          spreadRadius: 0.5,
+                                          offset: Offset(0.5, 0.5), // shadow direction: bottom right
+                                        )
+                                      ]
                                   ),
                                 ),
 
@@ -251,8 +267,16 @@ class ScheduledView extends StatelessWidget{
                                               width: 1),
                                           left: BorderSide(
                                               color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1)
-                                      )
+                                              width: 1),
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color.fromRGBO(220, 220, 224, 0.5),
+                                          blurRadius: 0.5,
+                                          spreadRadius: 0.5,
+                                          offset: Offset(-0.5, -0.5), // shadow direction: bottom right
+                                        )
+                                      ]
                                   ),
                                   margin: EdgeInsets.only(bottom: 1),
                                 ),

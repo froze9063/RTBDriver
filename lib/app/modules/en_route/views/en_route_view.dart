@@ -59,11 +59,18 @@ class EnRouteView extends GetView<EnRouteController> {
                     )
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(left: 24, right: 24,top: 45,bottom: 24),
+                  padding: EdgeInsets.only(left: 10, right: 10,top: 40,bottom: 12),
                   child: Row(
                     children: [
                       GestureDetector(
-                        child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
+                        child: Container(
+                          width: 55,
+                          height: 55,
+                          color: Colors.transparent,
+                          child: Center(
+                            child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
+                          ),
+                        ),
                         onTap: (){
                           Get.to(() => MenusView());
                         },
@@ -76,7 +83,14 @@ class EnRouteView extends GetView<EnRouteController> {
                       )),
                       Expanded(child: SizedBox(), flex: 1),
                       GestureDetector(
-                        child: Image.asset("assets/ic_notification.png", height: 24, width: 24),
+                        child: Container(
+                          width: 55,
+                          height: 55,
+                          color: Colors.transparent,
+                          child: Center(
+                            child: Image.asset("assets/ic_notification.png", height: 28, width: 28),
+                          ),
+                        ),
                         onTap: (){
                           Get.to(() => NotificationView());
                         },
@@ -88,7 +102,7 @@ class EnRouteView extends GetView<EnRouteController> {
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 115, left: 24, right: 24),
+              margin: EdgeInsets.only(top: 135, left: 24, right: 24),
               width: double.maxFinite,
               height: 150,
               child: Card(
@@ -202,11 +216,11 @@ class EnRouteView extends GetView<EnRouteController> {
                         SizedBox(width: 24),
 
                         Container(
-                          width: 55,
-                          height: 55,
+                          width: 65,
+                          height: 65,
                           child: Stack(
                             children: [
-                              Image.asset("assets/ic_km.png", height: 120, width: 120),
+                              Image.asset("assets/ic_km.png", height: 65, width: 65),
                              Container(
                                width: double.maxFinite,
                                height: double.maxFinite,
@@ -217,12 +231,12 @@ class EnRouteView extends GetView<EnRouteController> {
                                    Text("80", style: TextStyle(
                                        color: Colors.white,
                                        fontFamily: "PoppinsBold",
-                                       fontSize: 16
+                                       fontSize: 14
                                    )),
                                    Text("km/h", style: TextStyle(
                                        color: Color.fromRGBO(195, 194, 204, 1.0),
                                        fontFamily: "PoppinsRegular",
-                                       fontSize: 12
+                                       fontSize: 10
                                    )),
                                  ],
                                ),
@@ -234,9 +248,11 @@ class EnRouteView extends GetView<EnRouteController> {
                         Expanded(child: SizedBox(),flex: 1),
 
                         Container(
-                          width: 55,
-                          height: 55,
-                          child: Image.asset("assets/ic_current_location.png", height: 16, width: 16),
+                          width: 65,
+                          height: 65,
+                          child: Center(
+                            child: Image.asset("assets/ic_current_location.png", height: 28, width: 28),
+                          ),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(Radius.circular(16))
@@ -265,18 +281,26 @@ class EnRouteView extends GetView<EnRouteController> {
                             ),
                             child: Center(
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  SizedBox(width: 24),
+                                  Container(
+                                    width: 55,
+                                    height: 55,
+                                    decoration: BoxDecoration(
+                                        color: Colors.transparent
+                                    ),
+                                  ),
 
                                   Expanded(child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Text("12:32", style: TextStyle(
                                           color: Color.fromRGBO(50, 50, 51, 1.0),
                                           fontFamily: "PoppinsBold",
                                           fontSize: 20
                                       )),
-
-                                      SizedBox(height: 6),
 
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
@@ -285,7 +309,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                           Text("2 Hours", style: TextStyle(
                                               color: Color.fromRGBO(50, 50, 51, 1.0),
                                               fontFamily: "PoppinsMedium",
-                                              fontSize: 20
+                                              fontSize: 16
                                           )),
 
                                           SizedBox(width: 16),
@@ -297,7 +321,7 @@ class EnRouteView extends GetView<EnRouteController> {
                                           Text("120.6 km", style: TextStyle(
                                               color: Color.fromRGBO(50, 50, 51, 1.0),
                                               fontFamily: "PoppinsMedium",
-                                              fontSize: 20
+                                              fontSize: 16
                                           ))
                                         ],
                                       )
@@ -305,13 +329,21 @@ class EnRouteView extends GetView<EnRouteController> {
                                   ), flex: 1),
 
                                   GestureDetector(
-                                    child: Container(
-                                      width: 55,
-                                      height: 55,
-                                      child: Image.asset("assets/ic_black_uparrow.png", height: 16, width: 16),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
+                                    child: Card(
+                                      elevation: 1.5,
+                                      shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(16))
+                                      ),
+                                      child: Container(
+                                        width: 55,
+                                        height: 55,
+                                        child: Center(
+                                          child: Image.asset("assets/ic_black_uparrow.png", height: 20, width: 20),
+                                        ),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.all(Radius.circular(16))
+                                        ),
                                       ),
                                     ),
                                     onTap: (){
@@ -410,7 +442,7 @@ class EnRouteView extends GetView<EnRouteController> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 24)
+                        SizedBox(width: 30)
                       ],
                     ),
                     SizedBox(height: 16)
@@ -420,9 +452,11 @@ class EnRouteView extends GetView<EnRouteController> {
             GetBuilder<EnRouteController>(
               id: "confirm",
               init: EnRouteController(),
-              builder: (value) => Visibility(child: Container(
+              builder: (value) => Visibility(child:
+              Container(
                 height: double.maxFinite,
                 width: double.maxFinite,
+                color: Colors.transparent,
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: Center(

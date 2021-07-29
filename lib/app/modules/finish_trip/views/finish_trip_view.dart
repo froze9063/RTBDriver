@@ -16,17 +16,22 @@ class FinishTripView extends GetView<FinishTripController> {
         color: Colors.white,
         child: Column(
           children: [
-            SizedBox(height: 55),
+            SizedBox(height: 40),
             Row(
               children: [
                 Expanded(child: SizedBox(), flex: 1),
                 GestureDetector(
-                  child: Image.asset("assets/ic_close_black.png"),
+                  child: Container(
+                    width: 55,
+                    height: 55,
+                    child: Image.asset("assets/ic_close_black.png"),
+                    color: Colors.transparent,
+                  ),
                   onTap: (){
                     Get.offAll(() => HomeView());
                   },
                 ),
-                SizedBox(width: 24),
+                SizedBox(width: 10),
               ],
             ),
             Expanded(child: Column(

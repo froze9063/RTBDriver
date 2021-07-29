@@ -15,7 +15,7 @@ class ReviewsView extends GetView<ReviewsController> {
               height: double.maxFinite, fit: BoxFit.fill),
 
           Padding(
-              padding: EdgeInsets.only(left: 24, right: 24, top: 45),
+              padding: EdgeInsets.only(left: 24, right: 10, top: 40),
               child: Row(children: [
                 Expanded(child: Text("Reviews", style: TextStyle(
                   fontSize: 20,
@@ -24,7 +24,14 @@ class ReviewsView extends GetView<ReviewsController> {
 
                 )), flex: 1),
                 GestureDetector(
-                  child: Image.asset("assets/ic_close_black.png", width: 24, height: 24),
+                  child: Container(
+                    width: 55,
+                    height: 55,
+                    color: Colors.transparent,
+                    child: Center(
+                      child: Image.asset("assets/ic_close_black.png", width: 24, height: 24),
+                    ),
+                  ),
                   onTap: (){
                     Get.back();
                   },
@@ -33,7 +40,7 @@ class ReviewsView extends GetView<ReviewsController> {
           ),
 
           Container(
-            margin: EdgeInsets.only(top: 100),
+            margin: EdgeInsets.only(top: 115),
             width: double.maxFinite,
             height: double.maxFinite,
             decoration: BoxDecoration(

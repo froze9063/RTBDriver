@@ -20,10 +20,16 @@ class PitStopController extends GetxController {
   late GoogleMapController googleMapController;
   late LocationData locationDataUser;
 
+  late List<String> timeList;
+  bool isTimeListShowed = false;
+  String selectedTime = "5 Minutes";
+
   @override
   void onInit() {
+    timeList = [];
     gmapController = Completer();
     kGooglePlex = CameraPosition(target: LatLng(1.3567349, 103.9683205), zoom: 16);
+    setTimeList();
     super.onInit();
   }
 
@@ -35,6 +41,32 @@ class PitStopController extends GetxController {
   @override
   void onClose() {}
   void increment() => count.value++;
+
+  void setTimeList(){
+    timeList.add("5 Minutes");
+    timeList.add("10 Minutes");
+    timeList.add("15 Minutes");
+    timeList.add("20 Minutes");
+    timeList.add("25 Minutes");
+    timeList.add("30 Minutes");
+    timeList.add("35 Minutes");
+    timeList.add("40 Minutes");
+    timeList.add("45 Minutes");
+    timeList.add("50 Minutes");
+    timeList.add("55 Minutes");
+    timeList.add("1 Hour");
+  }
+
+  void setTimeListShow(bool isSHow){
+      this.isTimeListShowed = isSHow;
+      update(["timelist"]);
+  }
+
+  void setTime(String time){
+    this.selectedTime = time;
+    setTimeListShow(false);
+    update(["time"]);
+  }
 
   void checkCurrentLocation(BuildContext context) async {
     Location location = new Location();

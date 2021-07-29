@@ -20,147 +20,165 @@ class HomeView extends GetView<HomeController> {
           Image.asset("assets/home_background.png", width: double.maxFinite,
               height: double.maxFinite, fit: BoxFit.fill),
 
-          Padding(
-              padding: EdgeInsets.all(24),
-              child: Column(
-                children: [
-                  SizedBox(height: 12),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        child: Image.asset("assets/ic_menus.png", height: 24, width: 24),
-                        onTap: (){
-                          Get.to(() => MenusView());
-                        },
-                      ),
-                      Expanded(child: SizedBox(), flex: 1),
-                      Text("Home", style: TextStyle(
+          Column(
+            children: [
+              Padding(padding: EdgeInsets.only(left: 10, right: 10, top: 40),
+                 child: Row(
+                   children: [
+                     GestureDetector(
+                       child: Container(
+                         width: 55,
+                         height: 55,
+                         color: Colors.transparent,
+                         child: Center(
+                           child: Image.asset("assets/ic_menus.png", height: 28, width: 28),
+                         ),
+                       ),
+                       onTap: (){
+                         Get.to(() => MenusView());
+                       },
+                     ),
+                     Expanded(child: SizedBox(), flex: 1),
+                     Text("Home", style: TextStyle(
+                         fontSize: 18,
+                         fontFamily: "PoppinsBold",
+                         color: Color.fromRGBO(63, 61, 86, 1.0)
+                     )),
+                     Expanded(child: SizedBox(), flex: 1),
+                     GestureDetector(
+                       child: Container(
+                         width: 55,
+                         height: 55,
+                         color: Colors.transparent,
+                         child: Center(
+                           child: Image.asset("assets/ic_notification.png", height: 28, width: 28),
+                         ),
+                       ),
+                       onTap: (){
+                         Get.to(() => NotificationView());
+                       },
+                     )
+                   ],
+                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 24, right: 24),
+                child: Column(
+                  children: [
+                    Image.asset("assets/img_driver_home.png", height: 100, width: 100, fit: BoxFit.fitHeight),
+                    SizedBox(height: 16),
+                    Text("John Travis Scott Travolta", style: TextStyle(
                         fontSize: 18,
                         fontFamily: "PoppinsBold",
                         color: Color.fromRGBO(63, 61, 86, 1.0)
-                      )),
-                      Expanded(child: SizedBox(), flex: 1),
-                      GestureDetector(
-                        child: Image.asset("assets/ic_notification.png", height: 24, width: 24),
-                        onTap: (){
-                          Get.to(() => NotificationView());
-                        },
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  Image.asset("assets/img_driver_home.png", height: 100, width: 100, fit: BoxFit.fitHeight),
-                  SizedBox(height: 16),
-                  Text("John Travis Scott Travolta", style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "PoppinsBold",
-                      color: Color.fromRGBO(63, 61, 86, 1.0)
-                  )),
-                  SizedBox(height: 16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Bus No.", style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "PoppinsRegular",
-                          color: Color.fromRGBO(63, 61, 86, 1.0)
-                      )),
+                    )),
+                    // SizedBox(height: 6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Bus No.", style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "PoppinsRegular",
+                            color: Color.fromRGBO(63, 61, 86, 1.0)
+                        )),
 
-                      SizedBox(width: 6),
+                        SizedBox(width: 6),
 
-                      Text("SBA4125", style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "PoppinsBold",
-                          color: Color.fromRGBO(63, 61, 86, 1.0)
-                      )),
-                    ],
-                  ),
-
-                  SizedBox(height: 16),
-
-                  Row(
-                    children: [
-                      Column(
-                        children: [
-                          Image.asset("assets/ic_trips.png", height: 24, width: 24),
-                          SizedBox(height: 4),
-                          Text("20", style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: "PoppinsBold",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                          SizedBox(height: 4),
-                          Text("Total Trips", style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: "PoppinsMedium",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                        ],
-                      ),
-
-                      Expanded(child: SizedBox(), flex: 1),
-
-                      Column(
-                        children: [
-                          Image.asset("assets/ic_speed.png", height: 24, width: 24),
-                          SizedBox(height: 4),
-                          Text("30 km", style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: "PoppinsBold",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                          SizedBox(height: 4),
-                          Text("Total Distance", style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: "PoppinsMedium",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                        ],
-                      ),
-
-                      Expanded(child: SizedBox(), flex: 1),
-
-                      Column(
-                        children: [
-                          Image.asset("assets/ic_clock.png", height: 24, width: 24),
-                          SizedBox(height: 4),
-                          Text("10.6", style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: "PoppinsBold",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                          SizedBox(height: 4),
-                          Text("Total Hours", style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: "PoppinsMedium",
-                              color: Color.fromRGBO(63, 61, 86, 1.0)
-                          )),
-                        ],
-                      )
-                    ],
-                  ),
-
-                  GestureDetector(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 16),
-                      padding: EdgeInsets.only(left: 36, right: 36, top: 10, bottom: 10),
-                      child: Text("View Profile", style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "PoppinsBold",
-                          color: Color.fromRGBO(255, 205, 56, 1.0)
-                      )),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(8))
-                      ),
+                        Text("SBA4125", style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "PoppinsBold",
+                            color: Color.fromRGBO(63, 61, 86, 1.0)
+                        )),
+                      ],
                     ),
-                    onTap: (){
-                      Get.to(() => ProfileView());
-                    },
-                  ),
-                ],
+
+                    SizedBox(height: 16),
+
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Image.asset("assets/ic_trips.png", height: 24, width: 24),
+                            SizedBox(height: 4),
+                            Text("20", style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: "PoppinsBold",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                            SizedBox(height: 4),
+                            Text("Total Trips", style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "PoppinsMedium",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                          ],
+                        ),
+
+                        Expanded(child: SizedBox(), flex: 1),
+
+                        Column(
+                          children: [
+                            Image.asset("assets/ic_speed.png", height: 24, width: 24),
+                            SizedBox(height: 4),
+                            Text("30 km", style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: "PoppinsBold",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                            SizedBox(height: 4),
+                            Text("Total Distance", style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "PoppinsMedium",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                          ],
+                        ),
+
+                        Expanded(child: SizedBox(), flex: 1),
+
+                        Column(
+                          children: [
+                            Image.asset("assets/ic_clock.png", height: 24, width: 24),
+                            SizedBox(height: 4),
+                            Text("10.6", style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: "PoppinsBold",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                            SizedBox(height: 4),
+                            Text("Total Hours", style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "PoppinsMedium",
+                                color: Color.fromRGBO(63, 61, 86, 1.0)
+                            )),
+                          ],
+                        )
+                      ],
+                    ),
+
+                    GestureDetector(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 16),
+                        padding: EdgeInsets.only(left: 36, right: 36, top: 10, bottom: 10),
+                        child: Text("View Profile", style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: "PoppinsBold",
+                            color: Color.fromRGBO(255, 205, 56, 1.0)
+                        )),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(8))
+                        ),
+                      ),
+                      onTap: (){
+                        Get.to(() => ProfileView());
+                      },
+                    ),
+                  ],
+                ),
               ),
+            ],
           ),
 
           Positioned.fill(child: Align(
@@ -198,6 +216,7 @@ class HomeView extends GetView<HomeController> {
                       margin: EdgeInsets.only(top: 14),
                       width: double.maxFinite,
                       height: 235,
+                      color: Colors.white,
                       child: Stack(
                         children: [
                           Positioned.fill(child: Align(
@@ -212,7 +231,15 @@ class HomeView extends GetView<HomeController> {
                                   border: Border.all(
                                       width: 1,
                                       color: Color.fromRGBO(22, 212, 98, 1.0)
-                                  )
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color.fromRGBO(220, 220, 224, 0.5),
+                                      blurRadius: 0.5,
+                                      spreadRadius: 0.5,
+                                      offset: Offset(0.5, 0.5), // shadow direction: bottom right
+                                    )
+                                  ]
                               ),
                               child: Column(
                                 children: [
@@ -370,7 +397,15 @@ class HomeView extends GetView<HomeController> {
                                                 left: BorderSide(
                                                     color: Color.fromRGBO(22, 212, 98, 1.0),
                                                     width: 1)
-                                            )
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Color.fromRGBO(220, 220, 224, 0.5),
+                                                blurRadius: 0.5,
+                                                spreadRadius: 0.5,
+                                                offset: Offset(0.5, 0.5), // shadow direction: bottom right
+                                              )
+                                            ]
                                         ),
                                         margin: EdgeInsets.only(top: 1),
                                       ),
@@ -414,7 +449,15 @@ class HomeView extends GetView<HomeController> {
                                                 left: BorderSide(
                                                     color: Color.fromRGBO(22, 212, 98, 1.0),
                                                     width: 1)
-                                            )
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Color.fromRGBO(220, 220, 224, 0.5),
+                                                blurRadius: 0.5,
+                                                spreadRadius: 0.5,
+                                                offset: Offset(-0.5, -0.5), // shadow direction: bottom right
+                                              )
+                                            ]
                                         ),
                                         margin: EdgeInsets.only(bottom: 1),
                                       ),

@@ -83,6 +83,7 @@ flutter:
     - assets/ic_send.png
     - assets/ic_track_yellow.png
     - assets/ic_search_yellow.png
+    - assets/ic_yellow_back.png
 
   fonts:
     - family: PoppinsBold

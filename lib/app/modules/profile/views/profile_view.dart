@@ -19,16 +19,21 @@ class ProfileView extends GetView<ProfileController> {
           children: [
             Positioned(
                 child: GestureDetector(
-                  child: Image.asset(
-                      "assets/ic_back_yellow.png", width: 24,
-                      height: 24),
+                  child: Container(
+                    width: 55,
+                    height: 55,
+                    color: Colors.transparent,
+                    child: Image.asset(
+                        "assets/ic_back_yellow.png", width: 24,
+                        height: 24),
+                  ),
                   onTap: (){
                     Get.back();
                   },
-                ), top: 45, left: 24),
+                ), top: 45, left: 1),
 
             Container(
-              margin: EdgeInsets.only(top: 45),
+              margin: EdgeInsets.only(top: 59),
               width: double.maxFinite,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +49,7 @@ class ProfileView extends GetView<ProfileController> {
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 135),
+              margin: EdgeInsets.only(top: 157),
               width: double.maxFinite,
               height: double.maxFinite,
               child: Column(
@@ -278,7 +283,7 @@ class ProfileView extends GetView<ProfileController> {
                             ),
 
                             Padding(padding: EdgeInsets.only(top: 36), child: GestureDetector(
-                              child: ColoredButton(height: 45, width: double.maxFinite, title: "Edit Profile",
+                              child: ColoredButton(height: 55, width: double.maxFinite, title: "Edit Profile",
                                   color: Color.fromRGBO(255, 205, 56, 1.0)),
                               onTap: (){
                                   Get.to(() => EditProfileView());
@@ -312,7 +317,7 @@ class ProfileView extends GetView<ProfileController> {
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 100),
+              margin: EdgeInsets.only(top: 115),
               width: double.maxFinite,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
