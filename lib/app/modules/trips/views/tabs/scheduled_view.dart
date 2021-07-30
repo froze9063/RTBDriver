@@ -50,7 +50,7 @@ class ScheduledView extends StatelessWidget{
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                             border: Border.all(
                                 width: index == 0 ? 1 : 2,
-                                color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0)
+                                color: index == 0 ? Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5)
                             ),
                             boxShadow: [
                               BoxShadow(
@@ -206,17 +206,17 @@ class ScheduledView extends StatelessWidget{
                                           bottomRight: Radius.circular(25)),
                                       border: Border(
                                           bottom: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           right: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           top: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           left: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1)
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2)
                                       ),
                                       boxShadow: [
                                         BoxShadow(
@@ -257,17 +257,17 @@ class ScheduledView extends StatelessWidget{
                                           topRight: Radius.circular(25)),
                                       border: Border(
                                           bottom: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           right: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           top: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                           left: BorderSide(
-                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(236, 239, 241, 1.0),
-                                              width: 1),
+                                              color: index == 0 ?Color.fromRGBO(22, 212, 98, 1.0) : Color.fromRGBO(220, 220, 224, 0.5),
+                                              width: 2),
                                       ),
                                       boxShadow: [
                                         BoxShadow(

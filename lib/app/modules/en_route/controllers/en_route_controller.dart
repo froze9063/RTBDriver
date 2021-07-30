@@ -22,6 +22,8 @@ class EnRouteController extends GetxController {
   bool isEmergencyShowed = false;
   bool isEnroute = true;
 
+  int confirmType = 0;
+
   @override
   void onInit() {
     gmapController = Completer();
@@ -38,8 +40,9 @@ class EnRouteController extends GetxController {
   void onClose() {}
   void increment() => count.value++;
 
-  void setConfirm(bool confirm){
+  void setConfirm(bool confirm, int confirmType){
     this.isConfirmShowed = confirm;
+    this.confirmType = confirmType;
     update(["confirm"]);
   }
 

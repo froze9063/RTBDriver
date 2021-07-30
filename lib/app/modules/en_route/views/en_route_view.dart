@@ -377,7 +377,7 @@ class EnRouteView extends GetView<EnRouteController> {
                             ),
                           ),
                           onTap: (){
-                            Get.to(() => FinishTripView());
+                             _enRouteController.setConfirm(true,1);
                           },
                         ), visible: !value.isEnroute)
                       ],
@@ -476,7 +476,8 @@ class EnRouteView extends GetView<EnRouteController> {
                             children: [
                               Image.asset("assets/img_thankyou.png"),
                               SizedBox(height: 16),
-                              Text("Are you ready to begin trip?", style: TextStyle(
+                              Text(value.confirmType == 0 ? "Are you ready to begin trip?"
+                                  : "Confirm End Trip?", style: TextStyle(
                                   fontSize: 16,
                                   fontFamily: "PoppinsRegular",
                               )),
@@ -485,7 +486,12 @@ class EnRouteView extends GetView<EnRouteController> {
                                 child: ColoredButton(height: 45, width: double.maxFinite, title: "Confirm",
                                     color: Color.fromRGBO(255, 205, 56, 1.0)),
                                 onTap: (){
-                                    value.setConfirm(!value.isConfirmShowed);
+                                  if(value.confirmType == 0){
+                                    value.setConfirm(!value.isConfirmShowed,1);
+                                  }
+                                  else{
+                                    Get.to(() => FinishTripView());
+                                  }
                                 },
                               )),
 
@@ -496,7 +502,12 @@ class EnRouteView extends GetView<EnRouteController> {
                                     fontFamily: "PoppinsMedium",
                                 )),
                                 onTap: (){
-                                  Get.back();
+                                  if(value.confirmType == 0){
+                                    Get.back();
+                                  }
+                                  else{
+                                     value.setConfirm(false,1);
+                                  }
                                 },
                               ),
                             ],
